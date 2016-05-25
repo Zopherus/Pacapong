@@ -15,9 +15,11 @@ namespace Pacman
         private Rectangle position;
         private Direction oldDirection;
 
-        public Ghost(Rectangle position)
+        public Ghost()
         {
-            this.position = position;
+            Random random = new Random();
+            int index = random.Next(Map.Nodes.Count);
+            position = Map.Nodes.ElementAt(index).Position;
         }
         
         public Rectangle Position

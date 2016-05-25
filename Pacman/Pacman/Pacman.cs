@@ -24,6 +24,9 @@ namespace Pacman
         private Direction? tryingDirection;
         private Queue<Node> nodeQueue = new Queue<Node>();
 
+
+        private Player currentControl = Player.Left;
+
         public Pacman() { }
         public Pacman(Rectangle position)
         {
@@ -129,6 +132,8 @@ namespace Pacman
         
         private void moveRight()
         {
+            if (currentControl == Player.Right)
+                return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X + speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
             {
@@ -161,6 +166,8 @@ namespace Pacman
 
         private void moveLeft()
         {
+            if (currentControl == Player.Left)
+                return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X - speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
             {
@@ -188,6 +195,31 @@ namespace Pacman
                 }
             }
             return new Tuple<bool,Rectangle>(true, new Rectangle(0,0,0,0));
+        }
+
+        // Used to change the movement direction of the pacman
+        public void changeDirectionUp()
+        {
+            movementDirection = Direction.Up;
+        }
+
+        public void changeDirectionRight()
+        {
+            if (currentControl == Player.Right)
+                return;
+            movementDirection = Direction.Right;
+        }
+
+        public void changeDirectionDown()
+        {
+            movementDirection = Direction.Down;
+        }
+
+        public void changeDirectionLeft()
+        {
+            if (currentControl == Player.Left)
+                return;
+            movementDirection = Direction.Left;
         }
 
         //Used to remove the dots when pacman intersects them

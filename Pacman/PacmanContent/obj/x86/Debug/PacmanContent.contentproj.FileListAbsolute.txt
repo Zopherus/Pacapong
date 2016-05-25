@@ -1,3 +1,2 @@
 C:\Users\Eric\Desktop\XNA Games\Pacman\Pacman\PacmanContent\obj\x86\Debug\PacmanContent.contentprojResolveAssemblyReference.cache
 C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\PacmanContent\obj\x86\Debug\PacmanContent.contentprojResolveAssemblyReference.cache
-C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\PacmanContent\obj\x86\Debug\PacmanContent.contentprojResolveAssemblyReference.cache

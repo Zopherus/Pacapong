@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace Pacman
 {
+    public enum Player { Left, Right };
     public enum GameState { Menu, Maze, Powerup, EnterName, HighScore };
     public enum Direction { Up = 1, Right, Down, Left};
     /// <summary>
@@ -35,7 +36,6 @@ namespace Pacman
         public static MouseState oldMouse;
 
         public static Pacman pacman;
-        public static Ghost ghost;
 
         public static Texture2D PacmanTexture;
         public static Texture2D WallTexture;
@@ -64,10 +64,8 @@ namespace Pacman
         {
             UpdateStates.TimerMaze.reset();
             pacman = new Pacman(new Rectangle(gridSize, gridSize, gridSize, gridSize));
-            ghost = new Ghost(new Rectangle(mapWidth - 2 * gridSize, mapWidth - 2 * gridSize, gridSize, gridSize));
             Map.InitializeMap();
             Highscore.ReadFromFile();
-            Map.Ghosts.Add(ghost);
         }
 
         /// <summary>

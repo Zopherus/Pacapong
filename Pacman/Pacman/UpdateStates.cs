@@ -63,20 +63,20 @@ namespace Pacman
             timerMaze.tick(gameTime);
             if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 5)
             {
-                Map.Ghosts.Add(new Ghost(new Rectangle(PacmanGame.screenWidth - 2 * PacmanGame.gridSize, PacmanGame.screenHeight - 2 * PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize)));
+                Map.Ghosts.Add(new Ghost());
                 timerMaze.reset();
             }
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
-                PacmanGame.pacman.movementDirection = Direction.Right;
+                PacmanGame.pacman.changeDirectionRight();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
-                PacmanGame.pacman.movementDirection = Direction.Up;
+                PacmanGame.pacman.changeDirectionUp();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
-                PacmanGame.pacman.movementDirection = Direction.Left;
+                PacmanGame.pacman.changeDirectionLeft();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
-                PacmanGame.pacman.movementDirection = Direction.Down;
+                PacmanGame.pacman.changeDirectionDown();
             PacmanGame.pacman.update();
             PacmanGame.pacman.checkIntersectionGhost();
             if (Map.Dots.Count == 0)
@@ -102,13 +102,13 @@ namespace Pacman
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
-                PacmanGame.pacman.movementDirection = Direction.Right;
+                PacmanGame.pacman.changeDirectionRight();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
-                PacmanGame.pacman.movementDirection = Direction.Up;
+                PacmanGame.pacman.changeDirectionUp();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
-                PacmanGame.pacman.movementDirection = Direction.Left;
+                PacmanGame.pacman.changeDirectionLeft();
             if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
-                PacmanGame.pacman.movementDirection = Direction.Down;
+                PacmanGame.pacman.changeDirectionDown();
             if (Map.Dots.Count == 0)
             {
                 win = true;

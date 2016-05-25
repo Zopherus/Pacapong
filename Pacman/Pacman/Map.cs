@@ -12,8 +12,8 @@ namespace Pacman
     {
         private static List<Wall> walls = new List<Wall>();
         private static List<Node> nodes = new List<Node>();
-
-        private static bool[,] wallMap = new bool[PacmanGame.mapWidth / PacmanGame.gridSize, PacmanGame.mapWidth / PacmanGame.gridSize];
+        //subtracting 2 to ignore the borders of screen
+        private static bool[,] wallMap = new bool[PacmanGame.screenWidth / PacmanGame.gridSize, PacmanGame.screenHeight / PacmanGame.gridSize];
         // 0 is left paddle, 1 is right paddle
         private static Paddle[] paddles = new Paddle[2];
         private static List<EmptySquare> emptySquares = new List<EmptySquare>(); 
@@ -130,42 +130,18 @@ namespace Pacman
             //Remove the dot where the pacman starts
             dots.Remove(new Dot(new Rectangle(PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize)));
             //Adds powerups
-            Rectangle rectangleValue = new Rectangle(15 * PacmanGame.gridSize, 8 * PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize);
-            powerups.Add(new Powerup(rectangleValue));
-            //Remove the dot where the powerup is
-            dots.Remove(new Dot(rectangleValue));
+            Random random = new Random();
+            int[] values = Enumerable.Range(0, Map.Nodes.Count).OrderBy(x => random.Next()).ToArray();
+            for (int counter = 0; counter < 4; counter++)
+            {
+                int index = values[counter];
+                Rectangle rectangleValue = Map.Nodes.ElementAt(index).Position;
+                powerups.Add(new Powerup(rectangleValue));
+                //Remove the dot where the powerup is
+                dots.Remove(new Dot(rectangleValue));
+            }
 
-            //Random check I used that doesn't actually matter
-            //Wanted to practice implementing floodfill
-            //bool check = checkMap();
             createAdjacencyList();
-        }
-
-        private static bool checkMap()
-        {
-            //Initializing array for flood fill
-            bool[,] values = new bool[PacmanGame.screenWidth / PacmanGame.gridSize - 2, PacmanGame.screenHeight / PacmanGame.gridSize - 2];
-            for (int x = 1; x < PacmanGame.screenWidth / PacmanGame.gridSize - 1; x++)
-            {
-                for (int y = 1; y < PacmanGame.screenHeight / PacmanGame.gridSize - 1; y++)
-                {
-                    Wall wall = new Wall(new Rectangle(PacmanGame.gridSize * x, PacmanGame.gridSize * y, PacmanGame.gridSize, PacmanGame.gridSize));
-                    if (walls.Contains(wall))
-                    {
-                        values[x - 1, y - 1] = true;
-                    }
-                }
-            }
-            floodFill(values, 0, 0);
-            bool returnValue = true;
-            foreach (bool value in values)
-            {
-                if (!value)
-                {
-                    returnValue = false;
-                }
-            }
-            return returnValue;
         }
 
         //Creates the adjacency list for the nodes for use in path finding for ghost
@@ -195,22 +171,6 @@ namespace Pacman
                     node.adjacentNodes.Add(nodes[nodes.IndexOf(new Node(new Rectangle(node.Position.X, node.Position.Y - PacmanGame.gridSize, node.Position.Width, node.Position.Height)))]);
                 }
             }
-        }
-
-        //Use recursive floodfill to check if map is valid
-        private static void floodFill(bool[,] values, int x, int y)
-        {
-            if (values[x, y])
-                return;
-            values[x, y] = true;
-            if (x+1 < values.GetLength(0))
-                floodFill(values, x + 1,y);
-            if (x-1 >= 0)
-                floodFill(values, x - 1, y);
-            if (y+1 < values.GetLength(1))
-                floodFill(values, x, y + 1);
-            if (y-1 >= 0)
-                floodFill(values, x, y - 1);
         }
     }
 }

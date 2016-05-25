@@ -38,6 +38,7 @@ namespace Pacman
                     }
                     break;
                 }
+                sr.Close();
             }
         }
 
