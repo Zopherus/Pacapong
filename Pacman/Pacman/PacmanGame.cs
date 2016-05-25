@@ -63,7 +63,7 @@ namespace Pacman
         public void Start()
         {
             UpdateStates.TimerMaze.reset();
-            pacman = new Pacman(new Rectangle(gridSize, gridSize, gridSize, gridSize));
+            pacman = new Pacman(new Rectangle(gridSize + horizontalSpace, gridSize + verticalSpace, gridSize, gridSize));
             Map.InitializeMap();
             Highscore.ReadFromFile();
         }

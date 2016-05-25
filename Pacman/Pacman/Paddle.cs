@@ -9,26 +9,31 @@ namespace Pacman
     class Paddle
     {
         public const int speed = 5;
-        public Rectangle Rectangle { get; private set; }
+        public Rectangle Position { get; private set; }
         
+        public Paddle(Rectangle Position)
+        {
+            this.Position = Position;
+        }
+
         public void MoveUp()
         {
-            Rectangle = new Rectangle(Rectangle.X, Rectangle.Y - 5, Rectangle.Width, Rectangle.Height);
+            Position = new Rectangle(Position.X, Position.Y - 5, Position.Width, Position.Height);
         }
 
         public void MoveRight()
         {
-            Rectangle = new Rectangle(Rectangle.X - 5, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+            Position = new Rectangle(Position.X - 5, Position.Y, Position.Width, Position.Height);
         }
 
         public void MoveDown()
         {
-            Rectangle = new Rectangle(Rectangle.X, Rectangle.Y + 5, Rectangle.Width, Rectangle.Height);
+            Position = new Rectangle(Position.X, Position.Y + 5, Position.Width, Position.Height);
         }
 
         public void MoveLeft()
         {
-            Rectangle = new Rectangle(Rectangle.X + 5, Rectangle.Y, Rectangle.Width, Rectangle.Height);
+            Position = new Rectangle(Position.X + 5, Position.Y, Position.Width, Position.Height);
         }
     }
 }

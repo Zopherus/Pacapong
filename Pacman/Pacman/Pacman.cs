@@ -297,7 +297,7 @@ namespace Pacman
         //Clears both directions if player is stopped at a wall
         private void clearDirection()
         {
-            if (distanceMoved == 0)
+            if (distanceMoved == 0 && oldDistanceMoved == 0)
             {
                 movementDirection = (Direction)(new Random().Next(1, 5));
             }

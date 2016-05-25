@@ -48,6 +48,10 @@ namespace Pacman
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.GhostTexture, ghost.Position, Color.White);
             }
+            foreach (Paddle paddle in Map.Paddles)
+            {
+                PacmanGame.spriteBatch.Draw(PacmanGame.GhostTexture, paddle.Position, Color.White);
+            }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);
         }

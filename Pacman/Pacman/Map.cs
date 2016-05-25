@@ -52,6 +52,11 @@ namespace Pacman
             get { return ghosts; }
         }
 
+        public static Paddle[] Paddles
+        {
+            get { return paddles; }
+        }
+
 
         public static void InitializeMap()
         {
@@ -80,17 +85,6 @@ namespace Pacman
                     number++;
                 }
             }
-            //Fills border of map
-            /*for (int x = 0; x < PacmanGame.screenWidth / PacmanGame.gridSize; x++)
-            {
-                walls.Add(new Wall(new Rectangle(PacmanGame.gridSize * x, 0, PacmanGame.gridSize, PacmanGame.gridSize)));
-                walls.Add(new Wall(new Rectangle(PacmanGame.gridSize * x, PacmanGame.screenHeight - PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize)));
-            }
-            for (int y = 1; y < PacmanGame.screenHeight / PacmanGame.gridSize - 1; y++)
-            {
-                walls.Add(new Wall(new Rectangle(0, PacmanGame.gridSize * y, PacmanGame.gridSize, PacmanGame.gridSize)));
-                walls.Add(new Wall(new Rectangle(PacmanGame.screenWidth - PacmanGame.gridSize, PacmanGame.gridSize * y, PacmanGame.gridSize, PacmanGame.gridSize)));
-            }*/
             //Fills in rest of map using two dimensional bool array wallMap
             for (int x = 0; x < wallMap.GetLength(0); x++)
             {
@@ -98,18 +92,18 @@ namespace Pacman
                 {
                     if (!wallMap[x,y])
                     {
-                        walls.Add(new Wall(new Rectangle((x) * PacmanGame.gridSize, (y) * PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize)));
+                        walls.Add(new Wall(new Rectangle(x * PacmanGame.gridSize + PacmanGame.horizontalSpace, y * PacmanGame.gridSize + PacmanGame.verticalSpace, PacmanGame.gridSize, PacmanGame.gridSize)));
                     }
                 }
             }
             //Fills map with empty squares, dots and nodes in all places without walls
             //variable used to count nodes
             int variable = 0;
-            for (int y = 1; y < PacmanGame.screenHeight / PacmanGame.gridSize - 1; y++)
+            for (int y = 1; y < PacmanGame.mapHeight / PacmanGame.gridSize - 1; y++)
             {
-                 for (int x = 1; x < PacmanGame.screenWidth / PacmanGame.gridSize - 1; x++)
+                 for (int x = 1; x < PacmanGame.mapWidth / PacmanGame.gridSize - 1; x++)
                  {
-                     Rectangle rectangle = new Rectangle(PacmanGame.gridSize * x, PacmanGame.gridSize * y, PacmanGame.gridSize, PacmanGame.gridSize);
+                     Rectangle rectangle = new Rectangle(PacmanGame.gridSize * x +PacmanGame.horizontalSpace, PacmanGame.gridSize * y + PacmanGame.verticalSpace, PacmanGame.gridSize, PacmanGame.gridSize);
                      bool value = true;
                      foreach (Wall wall in walls)
                      {
@@ -142,6 +136,9 @@ namespace Pacman
             }
 
             createAdjacencyList();
+
+            paddles[0] = new Paddle(new Rectangle(0, 0, 0, 0));
+            paddles[1] = new Paddle(new Rectangle(0, 0, 0, 0));
         }
 
         //Creates the adjacency list for the nodes for use in path finding for ghost
