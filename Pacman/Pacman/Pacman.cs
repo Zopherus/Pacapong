@@ -9,7 +9,7 @@ namespace Pacman
     //The character that the player uses
     public class Pacman
     {
-        private const int speed = 6; //Bugs happen if the speed doesn't divide the gridSize
+        private const int speed = 3; //Bugs happen if the speed doesn't divide the gridSize
 
         public Direction? oldMovementDirection;
         public Direction? movementDirection;
@@ -42,17 +42,6 @@ namespace Pacman
         {
             get { return position; }
         }
-        
-        public double DistanceMoved
-        {
-            get { return distanceMoved; }
-        }
-
-        public double OldDistanceMoved
-        {
-            get { return oldDistanceMoved; }
-        }
-
 
         public void update()
         {
@@ -95,6 +84,11 @@ namespace Pacman
 
         private void move()
         {
+
+
+            // If player goes up or down, the next change in direction has to be to the right
+            // If a pacman runs into a wall, make it continue moving, if a player doesn't choose direction, randomly choose it
+
             switch(movementDirection)
             {
                 case Direction.Up:
@@ -200,6 +194,10 @@ namespace Pacman
         // Used to change the movement direction of the pacman
         public void changeDirectionUp()
         {
+            if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
+                return;
+            if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
+                return;
             movementDirection = Direction.Up;
         }
 
@@ -212,6 +210,10 @@ namespace Pacman
 
         public void changeDirectionDown()
         {
+            if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
+                return;
+            if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
+                return;
             movementDirection = Direction.Down;
         }
 
@@ -295,9 +297,9 @@ namespace Pacman
         //Clears both directions if player is stopped at a wall
         private void clearDirection()
         {
-            if (distanceMoved == 0 && oldDistanceMoved == 0)
+            if (distanceMoved == 0)
             {
-                tryingDirection = null;
+                movementDirection = (Direction)(new Random().Next(1, 5));
             }
         }
 
@@ -318,7 +320,6 @@ namespace Pacman
             List<Node> unvisitedNodes = new List<Node>(Map.Nodes);
             nodeQueue.Clear();
             Node startingNode = nodeClosest(PacmanGame.pacman.Position);
-            Node destinationNode = nodeClosest(position);
             foreach (Node node in unvisitedNodes)
             {
                 node.distanceFromSource = 100; //Infinite Distance
@@ -335,7 +336,7 @@ namespace Pacman
                     {
                         node.distanceFromSource = nodePosition.distanceFromSource + 1;
                     }
-                    if (unvisitedNodes.Contains(node))
+                    if (unvisitedNodes.Contains(node) && !nodeQueue.Contains(node))
                     {
                         nodeQueue.Enqueue(node);
                     }

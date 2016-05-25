@@ -9,10 +9,6 @@ namespace Pacman
     class Menu
     {
         private static Rectangle playRectangle = new Rectangle(3 * PacmanGame.screenWidth / 8, PacmanGame.screenHeight / 4, PacmanGame.screenWidth / 4, PacmanGame.screenHeight / 8);
-        
-        
-        
-        
         private static Rectangle highScoreRectangle = new Rectangle(3 * PacmanGame.screenWidth / 8, PacmanGame.screenHeight / 2, PacmanGame.screenWidth / 4, PacmanGame.screenHeight / 8);
         private static Rectangle quitRectangle = new Rectangle(3 * PacmanGame.screenWidth / 8, 3 * PacmanGame.screenHeight / 4, PacmanGame.screenWidth / 4, PacmanGame.screenHeight / 8);
     

@@ -13,7 +13,7 @@ namespace Pacman
         private static List<Wall> walls = new List<Wall>();
         private static List<Node> nodes = new List<Node>();
         //subtracting 2 to ignore the borders of screen
-        private static bool[,] wallMap = new bool[PacmanGame.screenWidth / PacmanGame.gridSize, PacmanGame.screenHeight / PacmanGame.gridSize];
+        private static bool[,] wallMap = new bool[PacmanGame.mapWidth / PacmanGame.gridSize, PacmanGame.mapHeight / PacmanGame.gridSize];
         // 0 is left paddle, 1 is right paddle
         private static Paddle[] paddles = new Paddle[2];
         private static List<EmptySquare> emptySquares = new List<EmptySquare>(); 

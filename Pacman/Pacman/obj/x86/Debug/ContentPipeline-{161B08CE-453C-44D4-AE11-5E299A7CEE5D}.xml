@@ -7,7 +7,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
       <Time>2015-07-04T19:22:19.0269234-07:00</Time>
     </Item>
     <Item>
@@ -16,7 +16,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
       <Time>2015-07-16T13:55:42.5770252-07:00</Time>
     </Item>
     <Item>
@@ -25,7 +25,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
       <Time>2015-07-05T11:06:23.3672859-07:00</Time>
     </Item>
     <Item>
@@ -34,7 +34,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
       <Time>2015-07-05T20:02:11.7577539-07:00</Time>
     </Item>
     <Item>
@@ -43,7 +43,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
       <Time>2015-07-21T16:45:57.2068351-07:00</Time>
     </Item>
     <Item>
@@ -52,7 +52,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
       <Time>2015-07-28T10:18:03.9541661-07:00</Time>
     </Item>
     <Item>
@@ -61,7 +61,7 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
       <Time>2015-07-28T20:07:30.3870104-07:00</Time>
     </Item>
     <Item>
@@ -70,7 +70,7 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
       <Time>2015-07-05T15:10:35.6463509-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
@@ -80,10 +80,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\PacmanContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Eric\Desktop\GitHub\Pacman\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\PacmanContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

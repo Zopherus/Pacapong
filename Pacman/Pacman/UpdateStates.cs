@@ -63,7 +63,7 @@ namespace Pacman
             timerMaze.tick(gameTime);
             if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 5)
             {
-                Map.Ghosts.Add(new Ghost());
+                //Map.Ghosts.Add(new Ghost());
                 timerMaze.reset();
             }
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
