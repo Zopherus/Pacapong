@@ -9,7 +9,7 @@ namespace Pacman
     //The character that the player uses
     public class Pacman
     {
-        private const int speed = 3; //Bugs happen if the speed doesn't divide the gridSize
+        private const int speed = 6; //Bugs happen if the speed doesn't divide the gridSize
 
         public Direction? oldMovementDirection;
         public Direction? movementDirection;
@@ -22,10 +22,18 @@ namespace Pacman
         //If player pressed down and cannot go down because of a wall
         //tryingDirection will be used to make the pacman turn downwards as soon as possible
         private Direction? tryingDirection;
+        
+        // Which paddle, if any, the pacman is currently caught by
+        public Player? PlayerCaught;
+
+        // After pacman is caught, how far from the paddle's top, is this top
+        // Ensures that the pacman stays in the same position on the paddle until is shot
+        public int CatchDifferential;
+
         private Queue<Node> nodeQueue = new Queue<Node>();
+        public bool IsPowerUp = false;
 
-
-        private Player currentControl = Player.Left;
+        public Player currentControl;
 
         public Pacman() { }
         public Pacman(Rectangle position)
@@ -84,10 +92,22 @@ namespace Pacman
 
         private void move()
         {
-
-
             // If player goes up or down, the next change in direction has to be to the right
             // If a pacman runs into a wall, make it continue moving, if a player doesn't choose direction, randomly choose it
+
+            // If a player currently holds onto the pacman with the paddle, move along with the paddle
+            if (PlayerCaught == Player.Left)
+            {
+                position.X = Map.Paddles[0].Position.X + Map.Paddles[0].Position.Width;
+                position.Y = Map.Paddles[0].Position.Y - CatchDifferential;
+                return;
+            }
+            else if (PlayerCaught == Player.Right)
+            {
+                position.X = Map.Paddles[1].Position.X - position.Width;
+                position.Y = Map.Paddles[1].Position.Y - CatchDifferential;
+                return;
+            }
 
             switch(movementDirection)
             {
@@ -198,6 +218,8 @@ namespace Pacman
                 return;
             if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
                 return;
+            if (!IsWithinMaze())
+                return;
             movementDirection = Direction.Up;
         }
 
@@ -213,6 +235,8 @@ namespace Pacman
             if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
                 return;
             if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
+                return;
+            if (!IsWithinMaze())
                 return;
             movementDirection = Direction.Down;
         }
@@ -247,11 +271,18 @@ namespace Pacman
                 {
                     Map.Powerups.Remove(powerup);
                     score += 50;
-                    PacmanGame.gameState = GameState.Powerup;
+                    IsPowerUp = true;
+                    UpdateStates.TimerPowerup.reset();
                     return;
                 }
             }
         }
+
+        private bool IsWithinMaze()
+        {
+            return position.X >= PacmanGame.horizontalSpace && position.X + position.Width <= PacmanGame.screenWidth - PacmanGame.horizontalSpace;
+        }
+
 
         private void calculateDistanceMoved()
         {
@@ -266,28 +297,28 @@ namespace Pacman
                 case Direction.Up:
                     if (checkIntersectionWalls(new Rectangle(position.X, position.Y - speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        movementDirection = Direction.Up;
+                        changeDirectionUp();
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Right:
                     if (checkIntersectionWalls(new Rectangle(position.X + speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        movementDirection = Direction.Right;
+                        changeDirectionRight();
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Down:
                     if (checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        movementDirection = Direction.Down;
+                        changeDirectionDown();
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Left:
                     if (checkIntersectionWalls(new Rectangle(position.X - speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        movementDirection = Direction.Left;
+                        changeDirectionLeft();
                         tryingDirection = null;
                     }
                     break;

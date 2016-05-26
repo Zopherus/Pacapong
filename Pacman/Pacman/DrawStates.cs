@@ -44,35 +44,19 @@ namespace Pacman
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.PowerupTexture, powerup.Position, Color.White);
             }
-            foreach (Ghost ghost in Map.Ghosts)
+            if (!PacmanGame.pacman.IsPowerUp)
             {
-                PacmanGame.spriteBatch.Draw(PacmanGame.GhostTexture, ghost.Position, Color.White);
+                foreach (Ghost ghost in Map.Ghosts)
+                {
+                    PacmanGame.spriteBatch.Draw(PacmanGame.GhostTexture, ghost.Position, Color.White);
+                }
             }
-            foreach (Paddle paddle in Map.Paddles)
+            else
             {
-                PacmanGame.spriteBatch.Draw(PacmanGame.BlackTexture, paddle.Position, Color.White);
-            }
-            PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);
-        }
-
-        public static void DrawPowerup()
-        {
-            foreach (Wall wall in Map.Walls)
-            {
-                PacmanGame.spriteBatch.Draw(PacmanGame.WallTexture, wall.Position, Color.White);
-            }
-            foreach (Dot dot in Map.Dots)
-            {
-                PacmanGame.spriteBatch.Draw(PacmanGame.DotTexture, dot.Position, Color.White);
-            }
-            foreach (Powerup powerup in Map.Powerups)
-            {
-                PacmanGame.spriteBatch.Draw(PacmanGame.PowerupTexture, powerup.Position, Color.White);
-            }
-            foreach (Ghost ghost in Map.Ghosts)
-            {
-                PacmanGame.spriteBatch.Draw(PacmanGame.GhostPowerupTexture, ghost.Position, Color.White);
+                foreach (Ghost ghost in Map.Ghosts)
+                {
+                    PacmanGame.spriteBatch.Draw(PacmanGame.GhostPowerupTexture, ghost.Position, Color.White);
+                }
             }
             foreach (Paddle paddle in Map.Paddles)
             {

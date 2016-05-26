@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 namespace Pacman
 {
     public enum Player { Left, Right };
-    public enum GameState { Menu, Maze, Powerup, EnterName, HighScore };
+    public enum GameState { Menu, Maze, EnterName, HighScore };
     public enum Direction { Up = 1, Right, Down, Left};
     /// <summary>
     /// This is the main type for your game
@@ -98,7 +98,6 @@ namespace Pacman
             GhostPowerupTexture = Content.Load<Texture2D>("Sprites/GhostPowerup");
             BlackTexture = Content.Load<Texture2D>("Sprites/Black");
             spriteFont = Content.Load<SpriteFont>("SpriteFonts/SpriteFont");
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -125,8 +124,6 @@ namespace Pacman
                 UpdateStates.UpdateMenu();
             if (gameState == GameState.Maze)
                 UpdateStates.UpdateMaze(gameTime);
-            if (gameState == GameState.Powerup)
-                UpdateStates.UpdatePowerup(gameTime);
             if (gameState == GameState.EnterName)
                 UpdateStates.UpdateEnterName();
             if (gameState == GameState.HighScore)
@@ -147,8 +144,6 @@ namespace Pacman
                 DrawStates.DrawMenu();
             if (gameState == GameState.Maze)
                 DrawStates.DrawMaze();
-            if (gameState == GameState.Powerup)
-                DrawStates.DrawPowerup();
             if (gameState == GameState.EnterName)
                 DrawStates.DrawEnterName();
             if (gameState == GameState.HighScore)

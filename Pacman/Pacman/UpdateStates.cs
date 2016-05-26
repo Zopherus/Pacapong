@@ -13,6 +13,8 @@ namespace Pacman
     {
         private static Timer timerMaze = new Timer(1000);
         private static Timer timerPowerup = new Timer(5000);
+        private static Timer timerCatch = new Timer(2000);
+
 
         //Used when EnterName state is entered to pull the last name from the text file
         private static bool EnterName = true;
@@ -31,6 +33,11 @@ namespace Pacman
         public static Timer TimerMaze
         {
             get { return timerMaze; }
+        }
+
+        public static Timer TimerPowerup
+        {
+            get { return timerPowerup; }
         }
 
         public static void UpdateMenu()
@@ -66,6 +73,7 @@ namespace Pacman
                 Map.Ghosts.Add(new Ghost());
                 timerMaze.reset();
             }
+
             if (PacmanGame.keyboard.IsKeyDown(Keys.W))
                 Map.Paddles[0].MoveUp();
             if (PacmanGame.keyboard.IsKeyDown(Keys.D))
@@ -75,7 +83,6 @@ namespace Pacman
             if (PacmanGame.keyboard.IsKeyDown(Keys.A))
                 Map.Paddles[0].MoveLeft();
 
-            
 
             if (PacmanGame.keyboard.IsKeyDown(Keys.Up))
                 Map.Paddles[1].MoveUp();
@@ -86,62 +93,88 @@ namespace Pacman
             if (PacmanGame.keyboard.IsKeyDown(Keys.Left))
                 Map.Paddles[1].MoveLeft();
 
+            foreach (Paddle paddle in Map.Paddles)
+            {
+                paddle.CatchPacman();
+            }
+            if (PacmanGame.pacman.PlayerCaught != null)
+            {
+                timerCatch.tick(gameTime);
+            }
+
+            if (timerCatch.TimeMilliseconds >= timerCatch.Interval)
+            {
+                if (PacmanGame.pacman.PlayerCaught == Player.Left)
+                {
+                    PacmanGame.pacman.PlayerCaught = null;
+                    PacmanGame.pacman.changeDirectionRight();
+                }
+                else if (PacmanGame.pacman.PlayerCaught == Player.Right)
+                {
+                    PacmanGame.pacman.PlayerCaught = null;
+                    PacmanGame.pacman.changeDirectionLeft();
+                }
+                timerMaze.reset();
+            }
+
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
-                PacmanGame.pacman.changeDirectionRight();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
-                PacmanGame.pacman.changeDirectionUp();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
-                PacmanGame.pacman.changeDirectionLeft();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
-                PacmanGame.pacman.changeDirectionDown();
-            PacmanGame.pacman.update();
-            PacmanGame.pacman.checkIntersectionGhost();
-            if (Map.Dots.Count == 0)
-            {
-                win = true;
-                PacmanGame.gameState = GameState.EnterName;
-            }
-            foreach (Ghost ghost in Map.Ghosts)
-            {
-                ghost.move();
-            }
-        }
 
-        public static void UpdatePowerup(GameTime gameTime)
-        {
-            timerPowerup.tick(gameTime);
-            if (timerPowerup.TimeMilliseconds >= timerPowerup.Interval)
+            if (PacmanGame.pacman.currentControl == Player.Right)
             {
-                timerPowerup.reset();
-                PacmanGame.gameState = GameState.Maze;
+                if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
+                    PacmanGame.pacman.changeDirectionRight();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
+                    PacmanGame.pacman.changeDirectionUp();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
+                    PacmanGame.pacman.changeDirectionLeft();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
+                    PacmanGame.pacman.changeDirectionDown();
             }
-            PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
-                Program.game.Exit();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
-                PacmanGame.pacman.changeDirectionRight();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
-                PacmanGame.pacman.changeDirectionUp();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
-                PacmanGame.pacman.changeDirectionLeft();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
-                PacmanGame.pacman.changeDirectionDown();
-            if (Map.Dots.Count == 0)
+            else if (PacmanGame.pacman.currentControl == Player.Left)
             {
-                win = true;
-                PacmanGame.gameState = GameState.EnterName;
+                if (PacmanGame.keyboard.IsKeyDown(Keys.D) && PacmanGame.oldKeyboard.IsKeyUp(Keys.D))
+                    PacmanGame.pacman.changeDirectionRight();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.W) && PacmanGame.oldKeyboard.IsKeyUp(Keys.W))
+                    PacmanGame.pacman.changeDirectionUp();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.A) && PacmanGame.oldKeyboard.IsKeyUp(Keys.A))
+                    PacmanGame.pacman.changeDirectionLeft();
+                if (PacmanGame.keyboard.IsKeyDown(Keys.S) && PacmanGame.oldKeyboard.IsKeyUp(Keys.S))
+                    PacmanGame.pacman.changeDirectionDown();
             }
             PacmanGame.pacman.update();
-            PacmanGame.pacman.checkIntersectionGhostPowerup();
-            foreach (Ghost ghost in Map.Ghosts)
+            if (!PacmanGame.pacman.IsPowerUp)
+                PacmanGame.pacman.checkIntersectionGhost();
+            else
+                PacmanGame.pacman.checkIntersectionGhostPowerup();
+            if (PacmanGame.pacman.IsPowerUp)
             {
-                ghost.moveOpposite();
+                timerPowerup.tick(gameTime);
+                if (timerPowerup.TimeMilliseconds >= timerPowerup.Interval)
+                {
+                    timerPowerup.reset();
+                    PacmanGame.pacman.IsPowerUp = false;
+                }
+            }
+
+
+
+            if (!PacmanGame.pacman.IsPowerUp)
+            {
+                foreach (Ghost ghost in Map.Ghosts)
+                {
+                    ghost.move();
+                }
+            }
+            else
+            {
+                foreach (Ghost ghost in Map.Ghosts)
+                {
+                    ghost.moveOpposite();
+                }
             }
         }
-
         public static void UpdateEnterName()
         {
             //Reset maze value to true so next time maze start it is reset

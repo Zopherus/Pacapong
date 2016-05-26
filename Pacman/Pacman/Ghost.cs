@@ -9,7 +9,7 @@ namespace Pacman
     //The Ghost that chases Pacman
     public class Ghost
     {
-        private const int speed = 5; //Bugs happen when the speed doesn't divide the gridSize
+        private const int speed = 3; //Bugs happen when the speed doesn't divide the gridSize
 
         private Random random = new Random();
         private Rectangle position;
