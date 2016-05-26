@@ -137,8 +137,8 @@ namespace Pacman
 
             createAdjacencyList();
 
-            paddles[0] = new Paddle(new Rectangle(0, 0, 0, 0));
-            paddles[1] = new Paddle(new Rectangle(0, 0, 0, 0));
+            paddles[0] = new Paddle(new Rectangle(PacmanGame.horizontalSpace / 2, PacmanGame.screenHeight / 2, PacmanGame.gridSize, PacmanGame.gridSize * 5), Player.Left);
+            paddles[1] = new Paddle(new Rectangle(PacmanGame.screenWidth - PacmanGame.horizontalSpace / 2, PacmanGame.screenHeight / 2, PacmanGame.gridSize, PacmanGame.gridSize * 5), Player.Right);
         }
 
         //Creates the adjacency list for the nodes for use in path finding for ghost

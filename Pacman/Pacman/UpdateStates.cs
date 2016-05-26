@@ -63,9 +63,29 @@ namespace Pacman
             timerMaze.tick(gameTime);
             if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 5)
             {
-                //Map.Ghosts.Add(new Ghost());
+                Map.Ghosts.Add(new Ghost());
                 timerMaze.reset();
             }
+            if (PacmanGame.keyboard.IsKeyDown(Keys.W))
+                Map.Paddles[0].MoveUp();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.D))
+                Map.Paddles[0].MoveRight();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.S))
+                Map.Paddles[0].MoveDown();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.A))
+                Map.Paddles[0].MoveLeft();
+
+            
+
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Up))
+                Map.Paddles[1].MoveUp();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Right))
+                Map.Paddles[1].MoveRight();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Down))
+                Map.Paddles[1].MoveDown();
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Left))
+                Map.Paddles[1].MoveLeft();
+
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
@@ -142,11 +162,51 @@ namespace Pacman
             {
                 foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
                 {
-                    if (PacmanGame.oldKeyboard.IsKeyUp(key))
+                    Console.WriteLine(key.ToString());
+                    if (key >= Keys.A && key <= Keys.Z && PacmanGame.oldKeyboard.IsKeyUp(key))
+                    {
+                        Highscore.currentName += key.ToString();
+                    }
+                    if (key == Keys.Tab)
+                    {
+                        if (Highscore.currentName.Trim() == "")
+                        {
+                            enterNameError = true;
+                        }
+                        else
+                        {
+                            using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
+                            {
+                                sw.WriteLine(Highscore.currentName);
+                            }
+                            Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
+                            PacmanGame.gameState = GameState.Menu;
+                            HighScore = true;
+                            EnterName = true;
+                        }
+                    }
+                    if (key == Keys.Enter)
+                    {
+                        if (Highscore.currentName.Trim() == "")
+                        {
+                            enterNameError = true;
+                        }
+                        else
+                        {
+                            using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
+                            {
+                                sw.WriteLine(Highscore.currentName);
+                            }
+                            Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
+                            PacmanGame.gameState = GameState.Maze;
+                        }
+                    }
+                    /*if (PacmanGame.oldKeyboard.IsKeyUp(key))
                     {
                         switch (key)
                         {
                             case Keys.A:
+                                Highscore.currentName += Keys.A.ToString();
                                 Highscore.currentName += "A";
                                 break;
                             case Keys.B:
@@ -262,7 +322,7 @@ namespace Pacman
                                 }
                                 break;
                         }
-                    }
+                    }*/
                 }
             }
             if (PacmanGame.keyboard.IsKeyDown(Keys.Back))
