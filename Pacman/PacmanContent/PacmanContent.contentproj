@@ -121,16 +121,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Music\DebussyArabesqueMeme-ix.wav">
-      <Name>DebussyArabesqueMeme-ix</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
-    <Compile Include="Music\LisztPaganiniChiptude.wav">
-      <Name>LisztPaganiniChiptude</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-    </Compile>
     <Compile Include="Sprites\PacmanSpritesheet.png">
       <Name>PacmanSpritesheet</Name>
       <Importer>TextureImporter</Importer>
@@ -140,6 +130,16 @@
       <Name>Invader</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\DebussyArabesqueMeme-ix.mp3">
+      <Name>DebussyArabesqueMeme-ix</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LisztPaganiniChiptude.mp3">
+      <Name>LisztPaganiniChiptude</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
     </Compile>
     <Content Include="Sprites\Paddles.png">
       <Name>Paddles</Name>

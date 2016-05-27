@@ -74,26 +74,44 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>j4Vf2yk5z20zRqpFeOCg1cGarYw=</dsig:DigestValue>
+        <dsig:DigestValue>pagNcGyJ9fjs0cqk5mU0/1RIzpE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\Music\DebussyArabesqueMeme-ix.xnb" size="39776361">
+  <file name="Content\Music\DebussyArabesqueMeme-ix.wma" size="5445363">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>prshDrhnAt2NJK7HkbPFBtM4+yw=</dsig:DigestValue>
+      <dsig:DigestValue>DrsCg8PC2FOlbcV0O0DaoGNBnu8=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music\LisztPaganiniChiptude.xnb" size="39745641">
+  <file name="Content\Music\DebussyArabesqueMeme-ix.xnb" size="141">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SO33CGWChCUjMgrn2oiVNH1dkbk=</dsig:DigestValue>
+      <dsig:DigestValue>5Z5iwo8g1vSn3XLyVMbp9qv9WDk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Music\LisztPaganiniChiptude.wma" size="5436415">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uuxwde6IGOJH7BlS4e9pp9L2plE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Music\LisztPaganiniChiptude.xnb" size="139">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OoqnHkXsmFMA9zkqaSIfiker+rI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SpriteFonts\SpriteFont.xnb" size="38062">

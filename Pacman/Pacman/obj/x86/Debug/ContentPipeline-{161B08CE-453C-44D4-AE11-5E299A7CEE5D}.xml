@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
-      <Time>2016-05-27T01:29:23.9295998-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
+      <Time>2016-05-26T18:50:27.7543963-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Wall.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
-      <Time>2016-05-27T01:29:23.9316048-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
+      <Time>2016-05-24T18:08:42.5236424-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Dot.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
-      <Time>2016-05-27T01:29:23.9195732-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
+      <Time>2016-05-26T18:32:45.2727845-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Powerup.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
-      <Time>2016-05-27T01:29:23.9311034-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
+      <Time>2016-05-26T18:40:43.4722774-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\GhostPowerup.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
-      <Time>2016-05-27T01:29:23.9235842-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Black.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
-      <Time>2016-05-25T00:43:17.1379383-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
+      <Time>2016-05-24T18:08:42.5196423-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost1.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost1.xnb</Output>
-      <Time>2016-05-27T01:29:23.9210772-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost1.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost2.png</Source>
@@ -70,8 +70,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost2.xnb</Output>
-      <Time>2016-05-27T01:29:23.9215789-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost2.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost3.png</Source>
@@ -79,8 +79,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost3.xnb</Output>
-      <Time>2016-05-27T01:29:23.9220798-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost3.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost4.png</Source>
@@ -88,8 +88,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost4.xnb</Output>
-      <Time>2016-05-27T01:29:23.9230841-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost4.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu Green.png</Source>
@@ -97,8 +97,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Green.xnb</Output>
-      <Time>2016-05-27T01:29:23.9245861-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Green.xnb</Output>
+      <Time>2016-05-27T08:35:57.5670508-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu Pink.png</Source>
@@ -106,8 +106,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Pink.xnb</Output>
-      <Time>2016-05-27T01:29:23.9250886-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Pink.xnb</Output>
+      <Time>2016-05-27T08:35:57.5710505-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu Purple.png</Source>
@@ -115,8 +115,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Purple.xnb</Output>
-      <Time>2016-05-27T01:29:23.9255895-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Purple.xnb</Output>
+      <Time>2016-05-27T08:35:57.5710505-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Menu Yellow.png</Source>
@@ -124,35 +124,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb</Output>
-      <Time>2016-05-27T01:29:23.9265922-07:00</Time>
-    </Item>
-    <Item>
-      <Source>SpriteFonts\SpriteFont.spritefont</Source>
-      <Name>SpriteFonts\SpriteFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
-      <Time>2016-05-25T00:43:17.136936-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Music\DebussyArabesqueMeme-ix.wav</Source>
-      <Name>Music\DebussyArabesqueMeme-ix</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.xnb</Output>
-      <Time>2016-05-27T08:14:31.3292054-07:00</Time>
-    </Item>
-    <Item>
-      <Source>Music\LisztPaganiniChiptude.wav</Source>
-      <Name>Music\LisztPaganiniChiptude</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.xnb</Output>
-      <Time>2016-05-27T08:14:31.3753335-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb</Output>
+      <Time>2016-05-27T08:35:57.5710505-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\PacmanSpritesheet.png</Source>
@@ -160,8 +133,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanSpritesheet.xnb</Output>
-      <Time>2016-05-27T10:32:24.1763127-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanSpritesheet.xnb</Output>
+      <Time>2016-05-27T11:37:46.5588129-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Invader.png</Source>
@@ -169,8 +142,37 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Invader.xnb</Output>
-      <Time>2016-05-27T11:05:32.3882624-07:00</Time>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Invader.xnb</Output>
+      <Time>2016-05-27T11:37:46.5568111-07:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFonts\SpriteFont.spritefont</Source>
+      <Name>SpriteFonts\SpriteFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
+      <Time>2016-05-24T18:08:42.5076413-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\DebussyArabesqueMeme-ix.mp3</Source>
+      <Name>Music\DebussyArabesqueMeme-ix</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.xnb</Output>
+      <Extra>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.wma</Extra>
+      <Time>2016-05-27T11:02:08.1663332-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Music\LisztPaganiniChiptude.mp3</Source>
+      <Name>Music\LisztPaganiniChiptude</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.xnb</Output>
+      <Extra>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.wma</Extra>
+      <Time>2016-05-27T11:02:08.0442479-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -179,10 +181,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\PacmanContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\PacmanContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -210,8 +212,8 @@
         <Value>2011-09-01T16:22:30-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2016-05-25T00:53:17.3626165-07:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2016-05-25T09:08:19.247931-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

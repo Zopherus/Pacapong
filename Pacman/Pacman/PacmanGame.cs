@@ -105,9 +105,15 @@ namespace Pacman
             boxYellow = Content.Load<Texture2D>("Sprites/Menu Yellow");
             paddleBox = Content.Load<Texture2D>("Sprites/Paddles");
 
-            //MenuSong.MenuSong = Content.Load<Song>("Music/LisztPaganiniChiptude.wav");
-            //GameSong = Content.Load<Song>("Music/DebussyArabesqueMeme-ix.wav");
+            GameSong = Content.Load<Song>("Music/LisztPaganiniChiptude");
+            MenuSong = Content.Load<Song>("Music/DebussyArabesqueMeme-ix");
         }
+
+        protected override void BeginRun()
+        {
+            base.BeginRun();
+            MediaPlayer.Play(MenuSong);
+        }
 
         protected override void Update(GameTime gameTime)
         {

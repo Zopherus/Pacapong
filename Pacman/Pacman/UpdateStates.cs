@@ -41,11 +41,11 @@ namespace Pacman
         {
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
-            //MediaPlayer.Play(PacmanGame.MenuSong);
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
-                    PacmanGame.gameState = GameState.Maze; 
+                    PacmanGame.gameState = GameState.Maze;
+                    MediaPlayer.Play(PacmanGame.GameSong);
                 if (Menu.QuitRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     Program.game.Exit();
             }
