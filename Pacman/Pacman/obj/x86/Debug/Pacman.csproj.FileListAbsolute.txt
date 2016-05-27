@@ -138,3 +138,15 @@ C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprit
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman Opened.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost1.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost2.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost3.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost4.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Green.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Pink.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Purple.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman closed.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman Opened.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.xnb
+C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.xnb

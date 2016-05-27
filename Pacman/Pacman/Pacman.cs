@@ -268,36 +268,40 @@ namespace Pacman
         }
 
         // Used to change the movement direction of the pacman
-        public void changeDirectionUp()
+        public void changeDirection(Direction direction)
         {
-            if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
-                return;
-            if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
-                return;
-            movementDirection = Direction.Up;
-        }
-
-        public void changeDirectionRight()
-        {
-            if (currentControl == Player.Right)
-                return;
-            movementDirection = Direction.Right;
-        }
-
-        public void changeDirectionDown()
-        {
-            if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
-                return;
-            if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
-                return;
-            movementDirection = Direction.Down;
-        }
-
-        public void changeDirectionLeft()
-        {
-            if (currentControl == Player.Left)
-                return;
-            movementDirection = Direction.Left;
+            if (direction == Direction.Up)
+            {
+                if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
+                    return;
+                if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
+                    return;
+                if (!IsWithinMaze())
+                    return;
+                movementDirection = Direction.Up;
+            }
+            else if (direction == Direction.Left)
+            {
+                if (currentControl == Player.Left)
+                    return;
+                movementDirection = Direction.Left;
+            }
+            else if (direction == Direction.Down)
+            {
+                if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
+                    return;
+                if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
+                    return;
+                if (!IsWithinMaze())
+                    return;
+                movementDirection = Direction.Down;
+            }
+            else if (direction == Direction.Right)
+            {
+                if (currentControl == Player.Right)
+                    return;
+                movementDirection = Direction.Right;
+            }
         }
 
         //Used to remove the dots when pacman intersects them
@@ -363,28 +367,28 @@ namespace Pacman
                 case Direction.Up:
                     if (checkIntersectionWalls(new Rectangle(position.X, position.Y - speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        changeDirectionUp();
+                        changeDirection(Direction.Up);
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Right:
                     if (checkIntersectionWalls(new Rectangle(position.X + speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        changeDirectionRight();
+                        changeDirection(Direction.Right);
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Down:
                     if (checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        changeDirectionDown();
+                        changeDirection(Direction.Down);
                         tryingDirection = null;
                     }
                     break;
                 case Direction.Left:
                     if (checkIntersectionWalls(new Rectangle(position.X - speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
                     {
-                        changeDirectionLeft();
+                        changeDirection(Direction.Left);
                         tryingDirection = null;
                     }
                     break;

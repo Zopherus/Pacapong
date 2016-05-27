@@ -79,6 +79,10 @@ namespace Pacman
                     if (paddle.DirectionByKey.TryGetValue(key, out d))
                     {
                         paddle.Move(d);
+                        if (paddle.Player == PacmanGame.pacman.currentControl && PacmanGame.oldKeyboard.IsKeyUp(key))
+                        {
+                            PacmanGame.pacman.changeDirection(d);
+                        }
                     }
                 }
             }
@@ -96,29 +100,8 @@ namespace Pacman
 
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
+            {
                 Program.game.Exit();
-
-            if (PacmanGame.pacman.currentControl == Player.Right)
-            {
-                if (PacmanGame.keyboard.IsKeyDown(Keys.Right) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Right))
-                    PacmanGame.pacman.changeDirectionRight();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Up))
-                    PacmanGame.pacman.changeDirectionUp();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.Left) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Left))
-                    PacmanGame.pacman.changeDirectionLeft();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.Down) && PacmanGame.oldKeyboard.IsKeyUp(Keys.Down))
-                    PacmanGame.pacman.changeDirectionDown();
-            }
-            else if (PacmanGame.pacman.currentControl == Player.Left)
-            {
-                if (PacmanGame.keyboard.IsKeyDown(Keys.D) && PacmanGame.oldKeyboard.IsKeyUp(Keys.D))
-                    PacmanGame.pacman.changeDirectionRight();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.W) && PacmanGame.oldKeyboard.IsKeyUp(Keys.W))
-                    PacmanGame.pacman.changeDirectionUp();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.A) && PacmanGame.oldKeyboard.IsKeyUp(Keys.A))
-                    PacmanGame.pacman.changeDirectionLeft();
-                if (PacmanGame.keyboard.IsKeyDown(Keys.S) && PacmanGame.oldKeyboard.IsKeyUp(Keys.S))
-                    PacmanGame.pacman.changeDirectionDown();
             }
 
             if (timerCatch.TimeMilliseconds >= timerCatch.Interval)
@@ -126,11 +109,11 @@ namespace Pacman
                 PacmanGame.pacman.PlayerCaught = null;
                 if (PacmanGame.pacman.PlayerCaught == Player.Left)
                 {
-                    PacmanGame.pacman.changeDirectionRight();
+                    PacmanGame.pacman.changeDirection(Direction.Right);
                 }
                 else if (PacmanGame.pacman.PlayerCaught == Player.Right)
                 {
-                    PacmanGame.pacman.changeDirectionLeft();
+                    PacmanGame.pacman.changeDirection(Direction.Left);
                 }
                 timerCatch.reset();
             }
