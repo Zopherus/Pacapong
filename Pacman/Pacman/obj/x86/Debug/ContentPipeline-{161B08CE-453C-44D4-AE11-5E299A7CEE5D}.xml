@@ -26,7 +26,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
-      <Time>2016-05-26T17:46:18.6996018-07:00</Time>
+      <Time>2016-05-26T18:32:45.2727845-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost.png</Source>
@@ -35,7 +35,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
-      <Time>2016-05-26T17:46:18.6996018-07:00</Time>
+      <Time>2016-05-26T18:28:32.6214464-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Powerup.png</Source>
@@ -44,7 +44,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
-      <Time>2016-05-26T17:46:18.6996018-07:00</Time>
+      <Time>2016-05-26T18:40:43.4722774-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\GhostPowerup.png</Source>
@@ -53,7 +53,7 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
-      <Time>2016-05-26T17:46:18.6996018-07:00</Time>
+      <Time>2016-05-26T18:45:35.9634265-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Black.png</Source>

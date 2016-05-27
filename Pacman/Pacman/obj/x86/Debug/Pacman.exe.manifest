@@ -102,7 +102,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>hD4AQUxdfSm7kuemr/1SXBiS3VQ=</dsig:DigestValue>
+      <dsig:DigestValue>kPE8WOFauzU2WrYQ08y+PU79KrA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Ghost.xnb" size="40187">
@@ -111,7 +111,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>mzJUE0g0I+QsSXKbguN5KBddlYc=</dsig:DigestValue>
+      <dsig:DigestValue>6qBgQId6iWG+OugeefOFzgSNjzI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\GhostPowerup.xnb" size="40187">
@@ -120,7 +120,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>CxqxchQ0HH5hqlgqKJD6q8wZIbA=</dsig:DigestValue>
+      <dsig:DigestValue>rDz3+Aa/IyN2BC79KN9IT+LL6Y8=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Pacman.xnb" size="40187">
@@ -138,7 +138,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>ywIrXPUFbVfDvZYBvir3spkbxL4=</dsig:DigestValue>
+      <dsig:DigestValue>EMBX1LMpOPgOw4ZpnhsGagY+mBk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Wall.xnb" size="191">
