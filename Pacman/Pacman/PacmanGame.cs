@@ -39,9 +39,10 @@ namespace Pacman
         public static Texture2D WallTexture;
         public static Texture2D DotTexture;
         public static Texture2D PowerupTexture;
-        public static Texture2D GhostTexture;
+        public static List<Texture2D> GhostTextures = new List<Texture2D>();
         public static Texture2D GhostPowerupTexture;
         public static Texture2D BlackTexture;
+        public static Texture2D InvaderTexture;
         public static SpriteFont spriteFont;
         public static Song MenuSong;
         public static Song GameSong;
@@ -85,13 +86,17 @@ namespace Pacman
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            PacmanTexture = Content.Load<Texture2D>("Sprites/Pacman");
+            PacmanTexture = Content.Load<Texture2D>("Sprites/PacmanSpritesheet");
             WallTexture = Content.Load<Texture2D>("Sprites/Wall");
             DotTexture = Content.Load<Texture2D>("Sprites/Dot");
             PowerupTexture = Content.Load<Texture2D>("Sprites/Powerup");
-            GhostTexture = Content.Load<Texture2D>("Sprites/Ghost");
+            GhostTextures.Add(Content.Load<Texture2D>("Sprites/Ghost1"));
+            GhostTextures.Add(Content.Load<Texture2D>("Sprites/Ghost2"));
+            GhostTextures.Add(Content.Load<Texture2D>("Sprites/Ghost3"));
+            GhostTextures.Add(Content.Load<Texture2D>("Sprites/Ghost4"));
             GhostPowerupTexture = Content.Load<Texture2D>("Sprites/GhostPowerup");
             BlackTexture = Content.Load<Texture2D>("Sprites/Black");
+            InvaderTexture = Content.Load<Texture2D>("Sprites/Invader");
             spriteFont = Content.Load<SpriteFont>("SpriteFonts/SpriteFont");
 
             boxGreen = Content.Load<Texture2D>("Sprites/Menu Green");
@@ -121,7 +126,7 @@ namespace Pacman
 
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.White);
+            GraphicsDevice.Clear(Color.DimGray);
             spriteBatch.Begin();
             if (gameState == GameState.Menu)
                 DrawStates.DrawMenu();

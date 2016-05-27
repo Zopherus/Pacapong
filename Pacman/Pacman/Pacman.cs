@@ -11,6 +11,7 @@ namespace Pacman
     {
         private const int speed = 6; //Bugs happen if the speed doesn't divide the gridSize
 
+
         public Direction? oldMovementDirection;
         public Direction? movementDirection;
         private double oldDistanceMoved;
@@ -112,10 +113,12 @@ namespace Pacman
                     if (currentControl == Player.Left)
                     {
                         Map.Paddles[0].Score += 50;
+                        Map.Invaders.Add(new Invader(Player.Right));
                     }
                     else
                     {
                         Map.Paddles[1].Score += 50;
+                        Map.Invaders.Add(new Invader(Player.Left));
                     }
                     break;
                 }

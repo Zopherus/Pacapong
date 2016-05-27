@@ -49,7 +49,7 @@ namespace Pacman
             {
                 foreach (Ghost ghost in Map.Ghosts)
                 {
-                    PacmanGame.spriteBatch.Draw(PacmanGame.GhostTexture, ghost.Position, Color.White);
+                    PacmanGame.spriteBatch.Draw(ghost.Texture, ghost.Position, Color.White);
                 }
             }
             else
@@ -63,7 +63,13 @@ namespace Pacman
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.paddleBox, paddle.Position, Color.White);
             }
+            foreach (Invader invader in Map.Invaders)
+            {
+                PacmanGame.spriteBatch.Draw(PacmanGame.InvaderTexture, invader.Position, Color.White);
+            }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
+
+           // PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, ((UpdateStates.timerGame.Interval - UpdateStates.timerGame.TimeMilliseconds) / 1000).ToString(), new Vector2(PacmanGame.screenWidth / 2, 0), Color.Black);
@@ -73,6 +79,24 @@ namespace Pacman
         {
             // Draw exact same thing as in maze, but with the winner
             DrawMaze();
+            string display = "";
+            if (Map.Paddles[0].Score > Map.Paddles[1].Score)
+            {
+                display = "Left Player Wins!";
+            }
+            else if (Map.Paddles[1].Score > Map.Paddles[0].Score)
+            {
+                display = "Right Player Wins!";
+            }
+            else
+            {
+                display = "It's a Thai!";
+            }
+
+            float stringHeight = PacmanGame.spriteFont.MeasureString(display).Y;
+            float stringWidth = PacmanGame.spriteFont.MeasureString(display).X;
+
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, display, new Vector2((PacmanGame.screenWidth - stringWidth) / 2, PacmanGame.screenHeight - stringHeight), Color.Black);
         }
 
         //Used to draw just the outline of a rectangle

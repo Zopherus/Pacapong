@@ -67,14 +67,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="29184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="30720">
       <assemblyIdentity name="Pacman" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>JWQxw3+Lij1AFnpLu1+0NtsJeHk=</dsig:DigestValue>
+        <dsig:DigestValue>j4Vf2yk5z20zRqpFeOCg1cGarYw=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -123,15 +123,6 @@
       <dsig:DigestValue>kPE8WOFauzU2WrYQ08y+PU79KrA=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sprites\Ghost.xnb" size="40187">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>6qBgQId6iWG+OugeefOFzgSNjzI=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\Sprites\Ghost1.xnb" size="40187">
     <hash>
       <dsig:Transforms>
@@ -177,6 +168,15 @@
       <dsig:DigestValue>1Mf7GumSTe4cGDg/6fDWnlSZA80=</dsig:DigestValue>
     </hash>
   </file>
+  <file name="Content\Sprites\Invader.xnb" size="627">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>EeW//DuH91py1D9IvWdwJuoyvgc=</dsig:DigestValue>
+    </hash>
+  </file>
   <file name="Content\Sprites\Menu Green.xnb" size="120187">
     <hash>
       <dsig:Transforms>
@@ -213,24 +213,6 @@
       <dsig:DigestValue>uakDLmOEco9SrLIz912nWElEsPM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sprites\Pacman closed.xnb" size="2764987">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>SeODdN7wz8y0Iimdra2Nj8MIQYI=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="Content\Sprites\Pacman Opened.xnb" size="2764987">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>EigC4Zd5ejvD2KpsJ1iA9Plpx+g=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Content\Sprites\Pacman.xnb" size="40187">
     <hash>
       <dsig:Transforms>
@@ -238,6 +220,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>0mINxH9QNtMg9pHXoK/RijeC03c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanSpritesheet.xnb" size="2933227">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7eMwASXt/HDAmO1FFSIzQthy6oM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Powerup.xnb" size="40187">

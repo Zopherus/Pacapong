@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 
 namespace Pacman
 {
@@ -14,12 +15,14 @@ namespace Pacman
         private Random random = new Random();
         private Rectangle position;
         private Direction oldDirection;
+        public Texture2D Texture { get; private set; }
 
         public Ghost()
         {
             Random random = new Random();
             int index = random.Next(Map.Nodes.Count);
             position = Map.Nodes.ElementAt(index).Position;
+            Texture = PacmanGame.GhostTextures[new Random().Next(PacmanGame.GhostTextures.Count)];
         }
         
         public Rectangle Position

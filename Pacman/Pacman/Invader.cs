@@ -9,51 +9,56 @@ namespace Pacman
     //The Invader that attacks the paddle
     public class Invader
     {
-        private const int speed = 3; //Bugs happen when the speed doesn't divide the gridSize
+        private const int speed = 2;
 
         private Random random = new Random();
-        private Rectangle position;
-        private Direction oldDirection;
+        public Rectangle Position { get; private set; }
+        private Player side;
 
-        public Invader()
+        public Invader(Player side)
         {
-            Random random = new Random();
-            int index = random.Next(Map.Nodes.Count);
-            position = Map.Nodes.ElementAt(index).Position;
+            this.side = side;
+            if (side == Player.Left)
+            {
+                int positionX = random.Next(PacmanGame.horizontalSpace - 2 * PacmanGame.gridSize);
+                Position = new Rectangle(positionX, -PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize);
+            }
+            else
+            {
+                int positionX = random.Next(PacmanGame.screenWidth - PacmanGame.horizontalSpace + PacmanGame.gridSize, PacmanGame.screenWidth - PacmanGame.gridSize);
+                Position = new Rectangle(positionX, -PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize);
+            }
         }
-        
-        public Rectangle Position
+
+        public void Update()
         {
-            get { return position; }
+            move();
+            CheckCollisionPaddles();
+        }
+
+        public void CheckCollisionPaddles()
+        {
+            if (side == Player.Left)
+            {
+                if (Position.Intersects(Map.Paddles[0].Position))
+                {
+                    Map.Paddles[0].Score -= 25;
+                    Position = new Rectangle(0, PacmanGame.screenHeight, 0, 0);
+                }
+            }
+            else
+            {
+                if (Position.Intersects(Map.Paddles[1].Position))
+                {
+                    Map.Paddles[1].Score -= 25;
+                    Position = new Rectangle(0, PacmanGame.screenHeight, 0, 0);
+                }
+            }
         }
 
         public void move()
         {
-            Tuple<bool, Rectangle> value = checkIntersectionPaddles(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize));
-            if (value.Item1)
-            {
-                position.Y += speed;
-                oldDirection = Direction.Down;
-            }
-            else
-            {
-                position.Y = value.Item2.Top - position.Height;
-            }
-        }
-
-        //Used by the move methods to stop pacman from going through a wall
-        //the bool value states if pacman intersects a wall or not
-        //the rectangle value is the rectangle of the wall that it intersected
-        private Tuple<bool, Rectangle> checkIntersectionPaddles(Rectangle position)
-        {
-            foreach (Paddle paddle in Map.Paddles)
-            {
-                if (paddle.Position.Intersects(position))
-                {
-                    return new Tuple<bool, Rectangle>(false, paddle.Position);
-                }
-            }
-            return new Tuple<bool, Rectangle>(true, new Rectangle(0, 0, 0, 0));
+            Position = new Rectangle(Position.X, Position.Y + speed, Position.Width, Position.Height);
         }
     }
 }
