@@ -94,9 +94,7 @@
     <Compile Include="Invader.cs" />
     <Compile Include="PacmanGame.cs" />
     <Compile Include="Ghost.cs" />
-    <Compile Include="Highscore.cs" />
     <Compile Include="Paddle.cs" />
-    <Compile Include="Score.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="Node.cs" />

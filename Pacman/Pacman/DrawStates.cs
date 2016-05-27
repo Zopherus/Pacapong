@@ -63,37 +63,9 @@ namespace Pacman
                 PacmanGame.spriteBatch.Draw(PacmanGame.BlackTexture, paddle.Position, Color.White);
             }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);
-        }
-
-        public static void DrawEnterName()
-        {
-            string value = "Your Score:" + PacmanGame.pacman.Score.ToString();
-            if (UpdateStates.win)
-                value = "You Win !!!!! \n" + value;
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, value, new Vector2(0, 0), Color.Black);
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Name:" + Highscore.currentName,
-                new Vector2(0, PacmanGame.spriteFont.MeasureString(PacmanGame.pacman.Score.ToString()).Y + lineSpacing), Color.Black);
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Enter to Retry. Tab for Menu",
-                new Vector2(0, PacmanGame.spriteFont.MeasureString(PacmanGame.pacman.Score.ToString()).Y +
-            PacmanGame.spriteFont.MeasureString("Name:").Y + 2 * lineSpacing), Color.Black);
-            if (UpdateStates.enterNameError)
-                PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Please enter in a name", 
-                    new Vector2(0, PacmanGame.screenHeight - PacmanGame.spriteFont.MeasureString("Please enter in a name").Y), Color.Black);
-        }
-
-        public static void DrawHighScore()
-        {
-            for (int counter = 1; counter < Highscore.Scores.Length + 1; counter++)
-            {
-                if (Highscore.Scores[counter - 1] != null)
-                {
-                    PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, counter.ToString() + ". " + Highscore.Scores[counter - 1].ToString(),
-                    new Vector2(0, (counter - 1) * lineSpacing), Color.Black);
-                }
-            }
-            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Tab To Go Back To Menu",
-                new Vector2(0, PacmanGame.screenHeight - PacmanGame.spriteFont.MeasureString("Tab To Go Back To Menu").Y), Color.Black);
+            //PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
         }
 
         //Used to draw just the outline of a rectangle

@@ -11,9 +11,10 @@ namespace Pacman
 {
     class Paddle
     {
-        public const int speed = 5;
+        public const int speed = 6;
         public Rectangle Position { get; private set; }
         public Player Player { get; private set; }
+        public int Score;
         public Dictionary<Keys, Direction> DirectionByKey { get; private set; }
         
 
@@ -43,27 +44,29 @@ namespace Pacman
             if (direction == Direction.Up)
             {
                 if (Position.Y - speed >= 0)
-                Position = new Rectangle(Position.X, Position.Y - speed, Position.Width, Position.Height);
-            }else if (direction == Direction.Left)
+                    Position = new Rectangle(Position.X, Position.Y - speed, Position.Width, Position.Height);
+            }
+            else if (direction == Direction.Left)
             {
                 if (Player == Player.Left && Position.X - speed < 0)
                     return;
-                if (Player == Player.Right && Position.X - speed < PacmanGame.screenWidth - PacmanGame.horizontalSpace)
+                if (Player == Player.Right && Position.X - speed < PacmanGame.screenWidth - PacmanGame.horizontalSpace + PacmanGame.gridSize)
                     return;
                 Position = new Rectangle(Position.X - speed, Position.Y, Position.Width, Position.Height);
-            }else if (direction == Direction.Down)
+            }
+            else if (direction == Direction.Down)
             {
                 if (Position.Y + speed + Position.Height <= PacmanGame.screenHeight)
                     Position = new Rectangle(Position.X, Position.Y + speed, Position.Width, Position.Height);
-            }else if (direction == Direction.Right)
+            }
+            else if (direction == Direction.Right)
             {
                 if (Player == Player.Right && Position.X + speed + Position.Width > PacmanGame.screenWidth)
                     return;
-                if (Player == Player.Left && Position.X + speed + Position.Width > PacmanGame.horizontalSpace)
+                if (Player == Player.Left && Position.X + speed + Position.Width > PacmanGame.horizontalSpace - PacmanGame.gridSize)
                     return;
                 Position = new Rectangle(Position.X + speed, Position.Y, Position.Width, Position.Height);
             }
-
         }
 
         public void CatchPacman()

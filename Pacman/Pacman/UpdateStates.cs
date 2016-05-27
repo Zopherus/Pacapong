@@ -11,7 +11,7 @@ namespace Pacman
 {
     class UpdateStates
     {
-        private static Timer timerMaze = new Timer(1000);
+        private static Timer timerMaze = new Timer(5000);
         private static Timer timerPowerup = new Timer(5000);
         private static Timer timerCatch = new Timer(2000);
 
@@ -48,11 +48,6 @@ namespace Pacman
             {
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     PacmanGame.gameState = GameState.Maze; 
-                if (Menu.HighScoreRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
-                {
-                    PacmanGame.gameState = GameState.HighScore;
-                    HighScore = true;
-                }
                 if (Menu.QuitRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     Program.game.Exit();
             }
@@ -68,7 +63,7 @@ namespace Pacman
                 Maze = false;
             }
             timerMaze.tick(gameTime);
-            if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 5)
+            if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 4)
             {
                 Map.Ghosts.Add(new Ghost());
                 timerMaze.reset();
@@ -84,7 +79,6 @@ namespace Pacman
                         paddle.Move(d);
                     }
                 }
-            
             }
                
 
@@ -92,24 +86,10 @@ namespace Pacman
             {
                 paddle.CatchPacman();
             }
+
             if (PacmanGame.pacman.PlayerCaught != null)
             {
                 timerCatch.tick(gameTime);
-            }
-
-            if (timerCatch.TimeMilliseconds >= timerCatch.Interval)
-            {
-                if (PacmanGame.pacman.PlayerCaught == Player.Left)
-                {
-                    PacmanGame.pacman.PlayerCaught = null;
-                    PacmanGame.pacman.changeDirectionRight();
-                }
-                else if (PacmanGame.pacman.PlayerCaught == Player.Right)
-                {
-                    PacmanGame.pacman.PlayerCaught = null;
-                    PacmanGame.pacman.changeDirectionLeft();
-                }
-                timerMaze.reset();
             }
 
             PacmanGame.pacman.oldMovementDirection = PacmanGame.pacman.movementDirection;
@@ -137,6 +117,21 @@ namespace Pacman
                     PacmanGame.pacman.changeDirectionLeft();
                 if (PacmanGame.keyboard.IsKeyDown(Keys.S) && PacmanGame.oldKeyboard.IsKeyUp(Keys.S))
                     PacmanGame.pacman.changeDirectionDown();
+            }
+
+            if (timerCatch.TimeMilliseconds >= timerCatch.Interval)
+            {
+                if (PacmanGame.pacman.PlayerCaught == Player.Left)
+                {
+                    PacmanGame.pacman.PlayerCaught = null;
+                    PacmanGame.pacman.changeDirectionRight();
+                }
+                else if (PacmanGame.pacman.PlayerCaught == Player.Right)
+                {
+                    PacmanGame.pacman.PlayerCaught = null;
+                    PacmanGame.pacman.changeDirectionLeft();
+                }
+                timerCatch.reset();
             }
             PacmanGame.pacman.update();
             if (!PacmanGame.pacman.IsPowerUp)
@@ -170,206 +165,6 @@ namespace Pacman
                 }
             }
             foreach (Invader invader in Map.Invaders){ invader.move(); }
-        }
-        public static void UpdateEnterName()
-        {
-            //Reset maze value to true so next time maze start it is reset
-            Maze = true;
-            if (EnterName)
-            {
-                using (StreamReader sr = new StreamReader("Content/Text Files/Name.txt"))
-                {
-                    string line = sr.ReadLine();
-                    if (line == null)
-                        Highscore.currentName = "";
-                    else
-                        Highscore.currentName = line;
-                }
-                EnterName = false;
-            }
-            if (Highscore.currentName.Length < 20) 
-            {
-                foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
-                {
-                    Console.WriteLine(key.ToString());
-                    if (key >= Keys.A && key <= Keys.Z && PacmanGame.oldKeyboard.IsKeyUp(key))
-                    {
-                        Highscore.currentName += key.ToString();
-                    }
-                    if (key == Keys.Tab)
-                    {
-                        if (Highscore.currentName.Trim() == "")
-                        {
-                            enterNameError = true;
-                        }
-                        else
-                        {
-                            using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
-                            {
-                                sw.WriteLine(Highscore.currentName);
-                            }
-                            Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
-                            PacmanGame.gameState = GameState.Menu;
-                            HighScore = true;
-                            EnterName = true;
-                        }
-                    }
-                    if (key == Keys.Enter)
-                    {
-                        if (Highscore.currentName.Trim() == "")
-                        {
-                            enterNameError = true;
-                        }
-                        else
-                        {
-                            using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
-                            {
-                                sw.WriteLine(Highscore.currentName);
-                            }
-                            Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
-                            PacmanGame.gameState = GameState.Maze;
-                        }
-                    }
-                    /*if (PacmanGame.oldKeyboard.IsKeyUp(key))
-                    {
-                        switch (key)
-                        {
-                            case Keys.A:
-                                Highscore.currentName += Keys.A.ToString();
-                                Highscore.currentName += "A";
-                                break;
-                            case Keys.B:
-                                Highscore.currentName += "B";
-                                break;
-                            case Keys.C:
-                                Highscore.currentName += "C";
-                                break;
-                            case Keys.D:
-                                Highscore.currentName += "D";
-                                break;
-                            case Keys.E:
-                                Highscore.currentName += "E";
-                                break;
-                            case Keys.F:
-                                Highscore.currentName += "F";
-                                break;
-                            case Keys.G:
-                                Highscore.currentName += "G";
-                                break;
-                            case Keys.H:
-                                Highscore.currentName += "H";
-                                break;
-                            case Keys.I:
-                                Highscore.currentName += "I";
-                                break;
-                            case Keys.J:
-                                Highscore.currentName += "J";
-                                break;
-                            case Keys.K:
-                                Highscore.currentName += "K";
-                                break;
-                            case Keys.L:
-                                Highscore.currentName += "L";
-                                break;
-                            case Keys.M:
-                                Highscore.currentName += "M";
-                                break;
-                            case Keys.N:
-                                Highscore.currentName += "N";
-                                break;
-                            case Keys.O:
-                                Highscore.currentName += "O";
-                                break;
-                            case Keys.P:
-                                Highscore.currentName += "P";
-                                break;
-                            case Keys.Q:
-                                Highscore.currentName += "Q";
-                                break;
-                            case Keys.R:
-                                Highscore.currentName += "R";
-                                break;
-                            case Keys.S:
-                                Highscore.currentName += "S";
-                                break;
-                            case Keys.T:
-                                Highscore.currentName += "T";
-                                break;
-                            case Keys.U:
-                                Highscore.currentName += "U";
-                                break;
-                            case Keys.V:
-                                Highscore.currentName += "V";
-                                break;
-                            case Keys.W:
-                                Highscore.currentName += "W";
-                                break;
-                            case Keys.X:
-                                Highscore.currentName += "X";
-                                break;
-                            case Keys.Y:
-                                Highscore.currentName += "Y";
-                                break;
-                            case Keys.Z:
-                                Highscore.currentName += "Z";
-                                break;
-                            case Keys.Space:
-                                Highscore.currentName += " ";
-                                break;
-                            case Keys.Tab:
-                                if (Highscore.currentName.Trim() == "")
-                                {
-                                    enterNameError = true;
-                                }
-                                else
-                                {
-                                    using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
-                                    {
-                                        sw.WriteLine(Highscore.currentName);
-                                        sw.Close();
-                                    }
-                                    Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
-                                    PacmanGame.gameState = GameState.Menu;
-                                    HighScore = true;
-                                    EnterName = true;
-                                }
-                                break;
-                            case Keys.Enter:
-                                if (Highscore.currentName.Trim() == "")
-                                {
-                                    enterNameError = true;
-                                }
-                                else
-                                {
-                                    using (StreamWriter sw = new StreamWriter("Content/Text Files/Name.txt"))
-                                    {
-                                        sw.WriteLine(Highscore.currentName);
-                                        sw.Close();
-                                    }
-                                    Highscore.addScore(new Score(Highscore.currentName.Trim(), PacmanGame.pacman.Score));
-                                    PacmanGame.gameState = GameState.Maze;
-                                }
-                                break;
-                        }
-                    }*/
-                }
-            }
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Back))
-            {
-                if (Highscore.currentName.Length > 0)
-                    Highscore.currentName = Highscore.currentName.Remove(Highscore.currentName.Length - 1);
-            }
-        }
-
-        public static void UpdateHighScore()
-        {
-            if (HighScore)
-            {
-                Highscore.ReadFromFile();
-                HighScore = false;
-            }
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Tab))
-                PacmanGame.gameState = GameState.Menu;
         }
     }
 }

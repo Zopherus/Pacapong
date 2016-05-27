@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
-      <Time>2016-05-26T18:50:27.7543963-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
+      <Time>2016-05-26T18:52:55.491304-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Wall.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
-      <Time>2016-05-24T18:08:42.5236424-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
+      <Time>2016-05-26T18:47:02.8721354-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Dot.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
-      <Time>2016-05-26T18:32:45.2727845-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
+      <Time>2016-05-26T18:47:02.8691352-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
-      <Time>2016-05-26T18:28:32.6214464-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
+      <Time>2016-05-26T18:47:02.8691352-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Powerup.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
-      <Time>2016-05-26T18:40:43.4722774-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
+      <Time>2016-05-26T18:47:02.8711353-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\GhostPowerup.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
-      <Time>2016-05-26T18:45:35.9634265-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
+      <Time>2016-05-26T18:47:02.8701353-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Black.png</Source>
@@ -61,8 +61,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
-      <Time>2016-05-24T18:08:42.5196423-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
+      <Time>2015-07-28T20:07:30.3870104-07:00</Time>
     </Item>
     <Item>
       <Source>SpriteFonts\SpriteFont.spritefont</Source>
@@ -70,8 +70,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
-      <Time>2016-05-24T18:08:42.5076413-07:00</Time>
+      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
+      <Time>2015-07-05T15:10:35.6463509-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -80,10 +80,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\PacmanContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\PacmanContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -111,8 +111,8 @@
         <Value>2011-09-01T16:22:30-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2016-05-25T09:08:19.247931-07:00</Value>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-06-22T18:06:10.1037805-07:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>

@@ -13,7 +13,6 @@ namespace Pacman
 
         public Direction? oldMovementDirection;
         public Direction? movementDirection;
-        private int score;
         private double oldDistanceMoved;
         private double distanceMoved;
         //Used to continue the pacman in the direction already going
@@ -41,11 +40,6 @@ namespace Pacman
             this.position = position;
         }
 
-        public int Score
-        {
-            get { return score; }
-        }
-
         public Rectangle Position
         {
             get { return position; }
@@ -61,6 +55,23 @@ namespace Pacman
             move();
             checkIntersectionDots();
             checkIntersectionPowerup();
+
+
+             // If the pacman is outside the bounds on the maze, always try to move towards it
+            if (position.X < PacmanGame.horizontalSpace + PacmanGame.gridSize)
+            {
+                if (currentControl == Player.Left)
+                    tryingDirection = Direction.Right;
+                else
+                    tryingDirection = Direction.Left;
+            }
+            if (position.X > PacmanGame.screenWidth - PacmanGame.horizontalSpace - PacmanGame.gridSize)
+            {
+                if (currentControl == Player.Right)
+                    tryingDirection = Direction.Left;
+                else
+                     tryingDirection = Direction.Right;
+            }
             moveTryingDirection();
             labelDistanceNodes();
         }
@@ -71,7 +82,15 @@ namespace Pacman
             {
                 if (ghost.Position.Intersects(position))
                 {
-                    PacmanGame.gameState = GameState.EnterName;
+                    if (currentControl == Player.Left)
+                    {
+                        Map.Paddles[0].Score -= 50;
+                    }
+                    else
+                    {
+                        Map.Paddles[1].Score -= 50;
+                    }
+                    PlayerCaught = (Player)((!(((int)currentControl) != 0)) ? 1 : 0);
                 }
             }
         }
@@ -84,7 +103,14 @@ namespace Pacman
                 if (position.Intersects(ghost.Position))
                 {
                     Map.Ghosts.Remove(ghost);
-                    score += 200;
+                    if (currentControl == Player.Left)
+                    {
+                        Map.Paddles[0].Score += 50;
+                    }
+                    else
+                    {
+                        Map.Paddles[1].Score += 50;
+                    }
                     break;
                 }
             }
@@ -109,6 +135,8 @@ namespace Pacman
                 return;
             }
 
+
+
             switch(movementDirection)
             {
                 case Direction.Up:
@@ -130,6 +158,8 @@ namespace Pacman
         //sets the pacman immediately adjacent to the wall it ran into
         private void moveUp()
         {
+            if (!IsWithinMaze())
+                return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X, position.Y - speed, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
             {
@@ -164,6 +194,8 @@ namespace Pacman
 
         private void moveDown()
         {
+            if (!IsWithinMaze())
+                return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
             {
@@ -218,8 +250,6 @@ namespace Pacman
                 return;
             if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
                 return;
-            if (!IsWithinMaze())
-                return;
             movementDirection = Direction.Up;
         }
 
@@ -235,8 +265,6 @@ namespace Pacman
             if (oldMovementDirection != Direction.Left && currentControl == Player.Right)
                 return;
             if (oldMovementDirection != Direction.Right && currentControl == Player.Left)
-                return;
-            if (!IsWithinMaze())
                 return;
             movementDirection = Direction.Down;
         }
@@ -256,7 +284,14 @@ namespace Pacman
                 if (dot.Position.Intersects(position))
                 {
                     Map.Dots.Remove(dot);
-                    score += 10;
+                    if (currentControl == Player.Left)
+                    {
+                        Map.Paddles[0].Score += 10;
+                    }
+                    else
+                    {
+                        Map.Paddles[1].Score += 10;
+                    }
                     return;
                 }
             }
@@ -270,7 +305,14 @@ namespace Pacman
                 if (powerup.Position.Intersects(position))
                 {
                     Map.Powerups.Remove(powerup);
-                    score += 50;
+                    if (currentControl == Player.Left)
+                    {
+                        Map.Paddles[0].Score += 50;
+                    }
+                    else
+                    {
+                        Map.Paddles[1].Score += 50;
+                    }
                     IsPowerUp = true;
                     UpdateStates.TimerPowerup.reset();
                     return;
@@ -280,7 +322,7 @@ namespace Pacman
 
         private bool IsWithinMaze()
         {
-            return position.X >= PacmanGame.horizontalSpace && position.X + position.Width <= PacmanGame.screenWidth - PacmanGame.horizontalSpace;
+            return position.X >= PacmanGame.horizontalSpace - PacmanGame.gridSize && position.X + position.Width <= PacmanGame.screenWidth - PacmanGame.horizontalSpace + PacmanGame.gridSize;
         }
 
 
