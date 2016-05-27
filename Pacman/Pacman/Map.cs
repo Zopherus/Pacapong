@@ -75,7 +75,8 @@ namespace Pacman
             //Initializes border of map
             string line = "";
             int number = 0;
-            using (StreamReader sr = new StreamReader("Content/Text Files/pacman1.txt"))
+            int mapNumber = new Random().Next(1, 5);
+            using (StreamReader sr = new StreamReader("Content/Text Files/pacman" + mapNumber.ToString() + ".txt"))
             {
                 while (true)
                 {

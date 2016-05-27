@@ -67,24 +67,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="28672">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="29184">
       <assemblyIdentity name="Pacman" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>fUoJmOqtY21jvzdAJkBQqHfu3fQ=</dsig:DigestValue>
+        <dsig:DigestValue>f9HKazq++yNoIbiZpc8n7skH1wQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\SpriteFonts\SpriteFont.xnb" size="38062">
+  <file name="Content\SpriteFonts\SpriteFont.xnb" size="21678">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>Ja59bIxORmWYAJsePAxG79THlys=</dsig:DigestValue>
+      <dsig:DigestValue>RCn6b28nvqpAOk5w/Sjcs/1/yb4=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Black.xnb" size="191">

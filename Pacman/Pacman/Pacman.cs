@@ -72,6 +72,8 @@ namespace Pacman
                 else
                      tryingDirection = Direction.Right;
             }
+
+
             moveTryingDirection();
             labelDistanceNodes();
         }
@@ -90,6 +92,8 @@ namespace Pacman
                     {
                         Map.Paddles[1].Score -= 50;
                     }
+
+                    // Gives the control over to the other player
                     PlayerCaught = (Player)((!(((int)currentControl) != 0)) ? 1 : 0);
                 }
             }
@@ -160,6 +164,8 @@ namespace Pacman
         {
             if (!IsWithinMaze())
                 return;
+            if (position.Y - speed < PacmanGame.verticalSpace)
+                return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X, position.Y - speed, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
             {
@@ -183,6 +189,12 @@ namespace Pacman
             {
                 position.X += speed;
                 movementDirection = Direction.Right;
+                if (currentControl == Player.Left && position.X > PacmanGame.screenWidth)
+                {
+                    Map.Paddles[1].Score -= 50;
+
+                    PlayerCaught = currentControl;
+                }
             }
             else
             {
@@ -195,6 +207,8 @@ namespace Pacman
         private void moveDown()
         {
             if (!IsWithinMaze())
+                return;
+            if (position.Y + speed > PacmanGame.screenHeight - PacmanGame.verticalSpace)
                 return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
@@ -219,6 +233,12 @@ namespace Pacman
             {
                 position.X -= speed;
                 movementDirection = Direction.Left;
+                if (currentControl == Player.Right && position.X + position.Width < 0)
+                {
+                    Map.Paddles[1].Score -= 50;
+
+                    PlayerCaught = currentControl;
+                }
             }
             else
             {
