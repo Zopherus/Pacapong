@@ -74,17 +74,17 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+OeUVDKX9xn8EdOmU6zlIiG9X9k=</dsig:DigestValue>
+        <dsig:DigestValue>GB2C91x9HY6C7uwSksAd5r70NlA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\Music\DebussyArabesqueMeme-ix.wma" size="5445363">
+  <file name="Content\Music\DebussyArabesqueMeme-ix.wma" size="5445365">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>M8Y4zWqF0krKV7S50JEs+ucpiQk=</dsig:DigestValue>
+      <dsig:DigestValue>Fg+2vPQJhNr+SH/3vP4byBv21lA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\DebussyArabesqueMeme-ix.xnb" size="141">
@@ -96,13 +96,13 @@
       <dsig:DigestValue>5Z5iwo8g1vSn3XLyVMbp9qv9WDk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music\LisztPaganiniChiptude.wma" size="5436415">
+  <file name="Content\Music\LisztPaganiniChiptude.wma" size="5436417">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DA2Ea0lgGHCWhr49gJdnTm/u5vI=</dsig:DigestValue>
+      <dsig:DigestValue>j6cGo1j8RWyNApLWsT1J/nz+Q8E=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\LisztPaganiniChiptude.xnb" size="139">
@@ -111,7 +111,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OoqnHkXsmFMA9zkqaSIfiker+rI=</dsig:DigestValue>
+      <dsig:DigestValue>0aCgWvv43QrwVZMdLmk0YLWJIMo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SoundEffects\Explosion.xnb" size="51619">
