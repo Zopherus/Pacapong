@@ -44,6 +44,12 @@ namespace Pacman
         public static Texture2D BlackTexture;
         public static SpriteFont spriteFont;
 
+        public static Texture2D boxGreen;
+        public static Texture2D boxPink;
+        public static Texture2D boxPurple;
+        public static Texture2D boxYellow;
+        public static Texture2D paddleBox;
+
         public static GameState gameState;
 
         public PacmanGame()
@@ -83,6 +89,12 @@ namespace Pacman
             GhostPowerupTexture = Content.Load<Texture2D>("Sprites/GhostPowerup");
             BlackTexture = Content.Load<Texture2D>("Sprites/Black");
             spriteFont = Content.Load<SpriteFont>("SpriteFonts/SpriteFont");
+
+            boxGreen = Content.Load<Texture2D>("Sprites/Menu Green");
+            boxPink = Content.Load<Texture2D>("Sprites/Menu Pink");
+            boxPurple = Content.Load<Texture2D>("Sprites/Menu Purple");
+            boxYellow = Content.Load<Texture2D>("Sprites/Menu Yellow");
+            paddleBox = Content.Load<Texture2D>("Sprites/Paddles");
         }
 
         protected override void Update(GameTime gameTime)

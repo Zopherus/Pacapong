@@ -14,20 +14,21 @@ namespace Pacman
 
         public static void DrawMenu()
         {
-            drawRectangleOutline(Menu.PlayRectangle);
-            drawRectangleOutline(Menu.HighScoreRectangle);
-            drawRectangleOutline(Menu.QuitRectangle);
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxGreen, Menu.PlayRectangle, Color.White);
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxPink, Menu.QuitRectangle, Color.White);
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxPurple, Menu.HighScoreRectangle, Color.White);
+
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Play", 
                 new Vector2(Menu.PlayRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Play").X/2,
-                    Menu.PlayRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Play").Y/2), Color.Black);
+                    Menu.PlayRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Play").Y/2), Color.White);
 
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "High Scores",
                 new Vector2(Menu.HighScoreRectangle.Center.X - PacmanGame.spriteFont.MeasureString("High Scores").X / 2,
-                    Menu.HighScoreRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("High Scores").Y / 2), Color.Black);
+                    Menu.HighScoreRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("High Scores").Y / 2), Color.White);
 
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Quit",
                 new Vector2(Menu.QuitRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Quit").X / 2,
-                    Menu.QuitRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Quit").Y / 2), Color.Black);
+                    Menu.QuitRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Quit").Y / 2), Color.White);
         }
 
         public static void DrawMaze()
@@ -60,7 +61,7 @@ namespace Pacman
             }
             foreach (Paddle paddle in Map.Paddles)
             {
-                PacmanGame.spriteBatch.Draw(PacmanGame.BlackTexture, paddle.Position, Color.White);
+                PacmanGame.spriteBatch.Draw(PacmanGame.paddleBox, paddle.Position, Color.White);
             }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
             //PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);

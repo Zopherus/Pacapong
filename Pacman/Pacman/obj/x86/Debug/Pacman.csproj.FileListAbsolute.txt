@@ -88,3 +88,31 @@ C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.exe.manifest
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.application
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.exe
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.pdb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost1.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost2.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost3.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost4.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Green.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Pink.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Purple.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman closed.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman Opened.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Pacman.exe.manifest
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Pacman.application
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Pacman.exe
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Pacman.pdb
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.csprojResolveAssemblyReference.cache
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.exe.manifest
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.application
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.exe
+C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.pdb

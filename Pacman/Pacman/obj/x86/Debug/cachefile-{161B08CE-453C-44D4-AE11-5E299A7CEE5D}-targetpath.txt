@@ -5,4 +5,14 @@ Content\Sprites\Ghost.xnb
 Content\Sprites\Powerup.xnb
 Content\Sprites\GhostPowerup.xnb
 Content\Sprites\Black.xnb
+Content\Sprites\Ghost1.xnb
+Content\Sprites\Ghost2.xnb
+Content\Sprites\Ghost3.xnb
+Content\Sprites\Ghost4.xnb
+Content\Sprites\Menu Green.xnb
+Content\Sprites\Menu Pink.xnb
+Content\Sprites\Menu Purple.xnb
+Content\Sprites\Menu Yellow.xnb
+Content\Sprites\Pacman closed.xnb
+Content\Sprites\Pacman Opened.xnb
 Content\SpriteFonts\SpriteFont.xnb

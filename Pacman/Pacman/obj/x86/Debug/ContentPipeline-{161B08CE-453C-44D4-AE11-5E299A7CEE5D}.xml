@@ -7,8 +7,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
-      <Time>2016-05-26T18:52:55.491304-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb</Output>
+      <Time>2016-05-26T23:23:33.6723143-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Wall.png</Source>
@@ -16,8 +16,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
-      <Time>2016-05-26T18:47:02.8721354-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb</Output>
+      <Time>2016-05-26T23:23:33.6733324-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Dot.png</Source>
@@ -25,8 +25,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
-      <Time>2016-05-26T18:47:02.8691352-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb</Output>
+      <Time>2016-05-26T23:23:33.6708104-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Ghost.png</Source>
@@ -34,8 +34,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
-      <Time>2016-05-26T18:47:02.8691352-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost.xnb</Output>
+      <Time>2016-05-26T23:23:33.6708104-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Powerup.png</Source>
@@ -43,8 +43,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
-      <Time>2016-05-26T18:47:02.8711353-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb</Output>
+      <Time>2016-05-26T23:23:33.6728146-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\GhostPowerup.png</Source>
@@ -52,8 +52,8 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
-      <Time>2016-05-26T18:47:02.8701353-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\GhostPowerup.xnb</Output>
+      <Time>2016-05-26T23:29:20.7757226-07:00</Time>
     </Item>
     <Item>
       <Source>Sprites\Black.png</Source>
@@ -61,8 +61,98 @@
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
-      <Time>2015-07-28T20:07:30.3870104-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Black.xnb</Output>
+      <Time>2016-05-26T23:23:33.6703086-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Ghost1.png</Source>
+      <Name>Sprites\Ghost1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost1.xnb</Output>
+      <Time>2016-05-26T23:29:20.7914719-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Ghost2.png</Source>
+      <Name>Sprites\Ghost2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost2.xnb</Output>
+      <Time>2016-05-26T23:29:20.7954745-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Ghost3.png</Source>
+      <Name>Sprites\Ghost3</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost3.xnb</Output>
+      <Time>2016-05-26T23:29:19.4600525-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Ghost4.png</Source>
+      <Name>Sprites\Ghost4</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Ghost4.xnb</Output>
+      <Time>2016-05-26T23:29:19.4605529-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu Green.png</Source>
+      <Name>Sprites\Menu Green</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Green.xnb</Output>
+      <Time>2016-05-26T23:29:20.777724-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu Pink.png</Source>
+      <Name>Sprites\Menu Pink</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Pink.xnb</Output>
+      <Time>2016-05-26T23:29:20.7797257-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu Purple.png</Source>
+      <Name>Sprites\Menu Purple</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Purple.xnb</Output>
+      <Time>2016-05-26T23:29:20.780739-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Menu Yellow.png</Source>
+      <Name>Sprites\Menu Yellow</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb</Output>
+      <Time>2016-05-26T23:29:20.783466-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Pacman closed.png</Source>
+      <Name>Sprites\Pacman closed</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman closed.xnb</Output>
+      <Time>2016-05-26T23:29:20.7854671-07:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites\Pacman Opened.png</Source>
+      <Name>Sprites\Pacman Opened</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman Opened.xnb</Output>
+      <Time>2016-05-26T23:29:20.7874691-07:00</Time>
     </Item>
     <Item>
       <Source>SpriteFonts\SpriteFont.spritefont</Source>
@@ -70,8 +160,8 @@
       <Importer>FontDescriptionImporter</Importer>
       <Processor>FontDescriptionProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
-      <Time>2015-07-05T15:10:35.6463509-07:00</Time>
+      <Output>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\SpriteFonts\SpriteFont.xnb</Output>
+      <Time>2016-05-26T23:23:33.6698082-07:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -80,10 +170,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\PacmanContent\</RootDirectory>
-      <LoggerRootDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
-      <IntermediateDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
-      <OutputDirectory>C:\Users\Eric\Desktop\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
+      <RootDirectory>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\PacmanContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Reimundo\Documents\GitHub\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>
@@ -111,8 +201,8 @@
         <Value>2011-09-01T16:22:30-07:00</Value>
       </Assembly>
       <Assembly>
-        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
-        <Value>2015-06-22T18:06:10.1037805-07:00</Value>
+        <Key>C:\WINDOWS\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2015-11-19T04:02:31.1326338-08:00</Value>
       </Assembly>
     </Assemblies>
   </Asset>
