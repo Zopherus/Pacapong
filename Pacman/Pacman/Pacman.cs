@@ -47,6 +47,7 @@ namespace Pacman
 
         public void update()
         {
+            position.Y = (position.Y / speed) * speed;
             oldDistanceMoved = distanceMoved;
             calculateDistanceMoved();
             oldPosition = position;
@@ -94,6 +95,7 @@ namespace Pacman
                     }
 
                     // Gives the control over to the other player
+                    UpdateStates.timerCatch.reset();
                     PlayerCaught = (Player)((!(((int)currentControl) != 0)) ? 1 : 0);
                 }
             }
@@ -194,6 +196,7 @@ namespace Pacman
                     Map.Paddles[1].Score -= 50;
 
                     PlayerCaught = currentControl;
+                    UpdateStates.timerCatch.reset();
                 }
             }
             else
@@ -208,7 +211,7 @@ namespace Pacman
         {
             if (!IsWithinMaze())
                 return;
-            if (position.Y + speed > PacmanGame.screenHeight - PacmanGame.verticalSpace)
+            if (position.Y + speed > PacmanGame.screenHeight - PacmanGame.verticalSpace - PacmanGame.gridSize)
                 return;
             Tuple<bool, Rectangle> value = checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize));
             if (value.Item1)
@@ -238,6 +241,7 @@ namespace Pacman
                     Map.Paddles[1].Score -= 50;
 
                     PlayerCaught = currentControl;
+                    UpdateStates.timerCatch.reset();
                 }
             }
             else

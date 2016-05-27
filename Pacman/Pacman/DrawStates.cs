@@ -64,9 +64,15 @@ namespace Pacman
                 PacmanGame.spriteBatch.Draw(PacmanGame.paddleBox, paddle.Position, Color.White);
             }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
-            //PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, PacmanGame.pacman.Score.ToString(), new Vector2(0, 0), Color.White);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, ((UpdateStates.timerGame.Interval - UpdateStates.timerGame.TimeMilliseconds) / 1000).ToString(), new Vector2(PacmanGame.screenWidth / 2, 0), Color.Black);
+        }
+        
+        public static void DrawGameEnd()
+        {
+            // Draw exact same thing as in maze, but with the winner
+            DrawMaze();
         }
 
         //Used to draw just the outline of a rectangle

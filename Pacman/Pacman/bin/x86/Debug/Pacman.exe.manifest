@@ -67,24 +67,42 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="29184">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="29696">
       <assemblyIdentity name="Pacman" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>f9HKazq++yNoIbiZpc8n7skH1wQ=</dsig:DigestValue>
+        <dsig:DigestValue>jA/zY230Hp0H461yVyLOMtQ2t1Y=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\SpriteFonts\SpriteFont.xnb" size="21678">
+  <file name="Content\Music\DebussyArabesqueMeme-ix.xnb" size="39776361">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>RCn6b28nvqpAOk5w/Sjcs/1/yb4=</dsig:DigestValue>
+      <dsig:DigestValue>prshDrhnAt2NJK7HkbPFBtM4+yw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Music\LisztPaganiniChiptude.xnb" size="39745641">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SO33CGWChCUjMgrn2oiVNH1dkbk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\SpriteFonts\SpriteFont.xnb" size="38062">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Ja59bIxORmWYAJsePAxG79THlys=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Black.xnb" size="191">

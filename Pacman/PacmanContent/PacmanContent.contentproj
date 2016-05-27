@@ -138,6 +138,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Music\DebussyArabesqueMeme-ix.wav">
+      <Name>DebussyArabesqueMeme-ix</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
+    <Compile Include="Music\LisztPaganiniChiptude.wav">
+      <Name>LisztPaganiniChiptude</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+    </Compile>
     <Content Include="Sprites\Paddles.png">
       <Name>Paddles</Name>
       <Importer>TextureImporter</Importer>

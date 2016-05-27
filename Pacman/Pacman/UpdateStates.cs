@@ -5,25 +5,22 @@ using System.Text;
 using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Media;
 
 
 namespace Pacman
 {
     class UpdateStates
     {
-        private static Timer timerMaze = new Timer(5000);
+        private static Timer timerGhost = new Timer(5000);
         private static Timer timerPowerup = new Timer(5000);
-        private static Timer timerCatch = new Timer(2000);
+        public static Timer timerGame = new Timer(30000);
+        public static Timer timerCatch = new Timer(1000);
 
-
-        //Used when EnterName state is entered to pull the last name from the text file
-        private static bool EnterName = true;
+        private static Timer timerNewGame = new Timer(5000);
 
         //Used to reset the maze
         private static bool Maze = true;
-
-        //Used when HighScore state is entered to pull the high scores from the text file
-        private static bool HighScore = true;
 
         //Becomes true if player wins
         public static bool win = false;
@@ -32,7 +29,7 @@ namespace Pacman
 
         public static Timer TimerMaze
         {
-            get { return timerMaze; }
+            get { return timerGhost; }
         }
 
         public static Timer TimerPowerup
@@ -44,6 +41,7 @@ namespace Pacman
         {
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
+            //MediaPlayer.Play(PacmanGame.MenuSong);
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
@@ -55,20 +53,24 @@ namespace Pacman
 
         public static void UpdateMaze(GameTime gameTime)
         {
-            //reset enterNameError
-            enterNameError = false;
             if (Maze)
             {
                 Program.game.Start();
                 Maze = false;
             }
-            timerMaze.tick(gameTime);
-            if (timerMaze.TimeMilliseconds >= timerMaze.Interval && Map.Ghosts.Count < 4)
+            timerGhost.tick(gameTime);
+            if (timerGhost.TimeMilliseconds >= timerGhost.Interval && Map.Ghosts.Count < 4)
             {
                 Map.Ghosts.Add(new Ghost());
-                timerMaze.reset();
+                timerGhost.reset();
             }
+            timerGame.tick(gameTime);
 
+
+            if (timerGame.TimeMilliseconds >= timerGame.Interval)
+            {
+                PacmanGame.gameState = GameState.GameEnd;
+            }
             foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
             {
                 foreach (Paddle paddle in Map.Paddles)
@@ -121,14 +123,13 @@ namespace Pacman
 
             if (timerCatch.TimeMilliseconds >= timerCatch.Interval)
             {
+                PacmanGame.pacman.PlayerCaught = null;
                 if (PacmanGame.pacman.PlayerCaught == Player.Left)
                 {
-                    PacmanGame.pacman.PlayerCaught = null;
                     PacmanGame.pacman.changeDirectionRight();
                 }
                 else if (PacmanGame.pacman.PlayerCaught == Player.Right)
                 {
-                    PacmanGame.pacman.PlayerCaught = null;
                     PacmanGame.pacman.changeDirectionLeft();
                 }
                 timerCatch.reset();
@@ -165,6 +166,18 @@ namespace Pacman
                 }
             }
             foreach (Invader invader in Map.Invaders){ invader.move(); }
+        }
+
+        public static void UpdateGameEnd(GameTime gameTime)
+        {
+            timerNewGame.tick(gameTime);
+            if (timerNewGame.TimeMilliseconds >= timerNewGame.Interval)
+            {
+                Maze = true;
+                timerGame.reset();
+                timerNewGame.reset();
+                PacmanGame.gameState = GameState.Maze;
+            }
         }
     }
 }

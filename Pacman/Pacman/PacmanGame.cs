@@ -12,13 +12,13 @@ using Microsoft.Xna.Framework.Media;
 namespace Pacman
 {
     public enum Player { Left, Right };
-    public enum GameState { Menu, Maze};
+    public enum GameState { Menu, Maze, GameEnd};
     public enum Direction { Up = 1, Right, Down, Left};
 
     public class PacmanGame : Game
     {
         public const int horizontalSpace = 8 * gridSize;
-        public const int verticalSpace = 3 * gridSize;
+        public const int verticalSpace = gridSize;
         public const int mapWidth = 21 * gridSize;
         public const int mapHeight = 21 * gridSize;
         public const int screenWidth = horizontalSpace * 2 + mapWidth;
@@ -43,6 +43,8 @@ namespace Pacman
         public static Texture2D GhostPowerupTexture;
         public static Texture2D BlackTexture;
         public static SpriteFont spriteFont;
+        public static Song MenuSong;
+        public static Song GameSong;
 
         public static Texture2D boxGreen;
         public static Texture2D boxPink;
@@ -67,12 +69,14 @@ namespace Pacman
         public void Start()
         {
             UpdateStates.TimerMaze.reset();
-            pacman = new Pacman(new Rectangle(gridSize + horizontalSpace, gridSize + verticalSpace, gridSize, gridSize));
+            pacman = new Pacman(new Rectangle(0, 0, gridSize, gridSize));
+            pacman.PlayerCaught = Player.Left;
             Map.InitializeMap();
         }
 
         protected override void Initialize()
         {
+            MediaPlayer.IsRepeating = true;
             PacmanGame.gameState = GameState.Menu;
             Start();
             base.Initialize();
@@ -95,6 +99,9 @@ namespace Pacman
             boxPurple = Content.Load<Texture2D>("Sprites/Menu Purple");
             boxYellow = Content.Load<Texture2D>("Sprites/Menu Yellow");
             paddleBox = Content.Load<Texture2D>("Sprites/Paddles");
+
+            //MenuSong.MenuSong = Content.Load<Song>("Music/LisztPaganiniChiptude.wav");
+            //GameSong = Content.Load<Song>("Music/DebussyArabesqueMeme-ix.wav");
         }
 
         protected override void Update(GameTime gameTime)
@@ -107,6 +114,8 @@ namespace Pacman
                 UpdateStates.UpdateMenu();
             if (gameState == GameState.Maze)
                 UpdateStates.UpdateMaze(gameTime);
+            if (gameState == GameState.GameEnd)
+                UpdateStates.UpdateGameEnd(gameTime);
             base.Update(gameTime);
         }
 
@@ -118,6 +127,8 @@ namespace Pacman
                 DrawStates.DrawMenu();
             if (gameState == GameState.Maze)
                 DrawStates.DrawMaze();
+            if (gameState == GameState.GameEnd)
+                DrawStates.DrawGameEnd();
             spriteBatch.End();
             base.Draw(gameTime);
         }

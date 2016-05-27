@@ -16,3 +16,5 @@ Content\Sprites\Menu Yellow.xnb
 Content\Sprites\Pacman closed.xnb
 Content\Sprites\Pacman Opened.xnb
 Content\SpriteFonts\SpriteFont.xnb
+Content\Music\DebussyArabesqueMeme-ix.xnb
+Content\Music\LisztPaganiniChiptude.xnb
