@@ -30,6 +30,10 @@ namespace Pacman
         // Ensures that the pacman stays in the same position on the paddle until is shot
         public int CatchDifferential;
 
+
+        public bool IsMouthOpen = false;
+        private int FrameCounter;
+
         private Queue<Node> nodeQueue = new Queue<Node>();
         public bool IsPowerUp = false;
 
@@ -78,6 +82,7 @@ namespace Pacman
 
             moveTryingDirection();
             labelDistanceNodes();
+            IncrementFrameCounter();
         }
         //Checks if the pacman intersects with a ghost
         public void checkIntersectionGhost()
@@ -255,6 +260,16 @@ namespace Pacman
             }
         }
 
+        private void IncrementFrameCounter()
+        {
+            FrameCounter++;
+            if (FrameCounter % 10 == 0)
+                IsMouthOpen = !IsMouthOpen;
+
+            if (!IsWithinMaze())
+                IsMouthOpen = false;
+        }
+
         //Used by the move methods to stop pacman from going through a wall
         //the bool value states if pacman intersects a wall or not
         //the rectangle value is the rectangle of the wall that it intersected
@@ -318,10 +333,12 @@ namespace Pacman
                     if (currentControl == Player.Left)
                     {
                         Map.Paddles[0].Score += 10;
+                        Map.Paddles[0].Shoot();
                     }
                     else
                     {
                         Map.Paddles[1].Score += 10;
+                        Map.Paddles[1].Shoot();
                     }
                     return;
                 }

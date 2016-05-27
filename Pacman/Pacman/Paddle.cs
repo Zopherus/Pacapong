@@ -69,6 +69,11 @@ namespace Pacman
             }
         }
 
+        public void Shoot()
+        {
+            Map.Shots.Add(new Shot(Player));
+        }
+
         public void CatchPacman()
         {
             if (PacmanGame.pacman.PlayerCaught != null)

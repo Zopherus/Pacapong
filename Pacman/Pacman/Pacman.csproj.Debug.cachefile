@@ -1,4 +1,3 @@
-Content\Sprites\Pacman.xnb
 Content\Sprites\Wall.xnb
 Content\Sprites\Dot.xnb
 Content\Sprites\Powerup.xnb
@@ -12,10 +11,17 @@ Content\Sprites\Menu Green.xnb
 Content\Sprites\Menu Pink.xnb
 Content\Sprites\Menu Purple.xnb
 Content\Sprites\Menu Yellow.xnb
-Content\Sprites\PacmanSpritesheet.xnb
 Content\Sprites\Invader.xnb
 Content\SpriteFonts\SpriteFont.xnb
 Content\Music\DebussyArabesqueMeme-ix.xnb
 Content\Music\LisztPaganiniChiptude.xnb
+Content\Sprites\PacmanClosedDown.xnb
+Content\Sprites\PacmanClosedLeft.xnb
+Content\Sprites\PacmanClosedRight.xnb
+Content\Sprites\PacmanClosedUp.xnb
+Content\Sprites\PacmanDown.xnb
+Content\Sprites\PacmanLeft.xnb
+Content\Sprites\PacmanRight.xnb
+Content\Sprites\PacmanUp.xnb
 Content\Music\DebussyArabesqueMeme-ix.wma
 Content\Music\LisztPaganiniChiptude.wma

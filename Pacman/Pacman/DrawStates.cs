@@ -67,7 +67,11 @@ namespace Pacman
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.InvaderTexture, invader.Position, Color.White);
             }
-            PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
+            foreach (Shot shot in Map.Shots)
+            {
+                PacmanGame.spriteBatch.Draw(PacmanGame.DotTexture, shot.position, Color.White);
+            }
+            PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTextures[(int)PacmanGame.pacman.movementDirection - 1, Convert.ToInt32(PacmanGame.pacman.IsMouthOpen)], PacmanGame.pacman.Position, Color.White);
 
            // PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);

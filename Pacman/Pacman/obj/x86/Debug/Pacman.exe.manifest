@@ -67,24 +67,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="30720">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Pacman.exe" size="32768">
       <assemblyIdentity name="Pacman" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>pagNcGyJ9fjs0cqk5mU0/1RIzpE=</dsig:DigestValue>
+        <dsig:DigestValue>1dRO/HHgDWzPGUIOSBdseLnpQ4w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Content\Music\DebussyArabesqueMeme-ix.wma" size="5445363">
+  <file name="Content\Music\DebussyArabesqueMeme-ix.wma" size="5445365">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>DrsCg8PC2FOlbcV0O0DaoGNBnu8=</dsig:DigestValue>
+      <dsig:DigestValue>9PCM9bIl30yl4xgeOr4dIiesATs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\DebussyArabesqueMeme-ix.xnb" size="141">
@@ -96,13 +96,13 @@
       <dsig:DigestValue>5Z5iwo8g1vSn3XLyVMbp9qv9WDk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Music\LisztPaganiniChiptude.wma" size="5436415">
+  <file name="Content\Music\LisztPaganiniChiptude.wma" size="5436417">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>uuxwde6IGOJH7BlS4e9pp9L2plE=</dsig:DigestValue>
+      <dsig:DigestValue>fhejI3moG1Q0K4W7vl6PTrOwNCs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Music\LisztPaganiniChiptude.xnb" size="139">
@@ -111,7 +111,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>OoqnHkXsmFMA9zkqaSIfiker+rI=</dsig:DigestValue>
+      <dsig:DigestValue>0aCgWvv43QrwVZMdLmk0YLWJIMo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\SpriteFonts\SpriteFont.xnb" size="38062">
@@ -231,22 +231,76 @@
       <dsig:DigestValue>uakDLmOEco9SrLIz912nWElEsPM=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sprites\Pacman.xnb" size="40187">
+  <file name="Content\Sprites\PacmanClosedDown.xnb" size="1464287">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>0mINxH9QNtMg9pHXoK/RijeC03c=</dsig:DigestValue>
+      <dsig:DigestValue>MnlMBmytQ3l79snA/PxWWQvU6fw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Sprites\PacmanSpritesheet.xnb" size="2933227">
+  <file name="Content\Sprites\PacmanClosedLeft.xnb" size="1464287">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>7eMwASXt/HDAmO1FFSIzQthy6oM=</dsig:DigestValue>
+      <dsig:DigestValue>11z0CHF5noUwwzfMcALAWqEs77Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanClosedRight.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QPQ+Du7De8hsOuosUms8Ea4bxjk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanClosedUp.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Be/J+XPouOsxZmOGA+jr0FQ6nVk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanDown.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+yqv5xy8RskU/8LzjOZ3ZwHI82U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanLeft.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BslrhKvj50i6E0BwT1O5UP1QyJw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanRight.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>C8kT2auTgM4GysDXTF06nMt9hBA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\Sprites\PacmanUp.xnb" size="1464287">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>opEF3zvDAp9SlB0Gq1oHyPqWpgc=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Sprites\Powerup.xnb" size="40187">

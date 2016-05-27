@@ -56,7 +56,6 @@ C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.csproj
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.exe
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\obj\x86\Debug\Pacman.pdb
-C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Pacman.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Wall.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Dot.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Powerup.xnb
@@ -144,9 +143,18 @@ C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Menu Yellow.xnb
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.xnb
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.xnb
-C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanSpritesheet.xnb
 C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Invader.xnb
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanSpritesheet.xnb
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\Invader.xnb
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.wma
 C:\Users\wyatt\Desktop\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.wma
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\DebussyArabesqueMeme-ix.wma
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Music\LisztPaganiniChiptude.wma
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanClosedDown.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanClosedLeft.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanClosedRight.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanClosedUp.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanDown.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanLeft.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanRight.xnb
+C:\Users\ejz19\Desktop\Github\Pacapong\Pacman\Pacman\bin\x86\Debug\Content\Sprites\PacmanUp.xnb

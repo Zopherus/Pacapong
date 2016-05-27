@@ -21,6 +21,7 @@ namespace Pacman
         private static List<Dot> dots = new List<Dot>();
         private static List<Powerup> powerups = new List<Powerup>();
         private static List<Ghost> ghosts = new List<Ghost>();
+        private static List<Shot> shots = new List<Shot>();
 
 
         public static List<Wall> Walls
@@ -58,6 +59,11 @@ namespace Pacman
             get { return ghosts; }
         }
 
+        public static List<Shot> Shots
+        {
+            get { return shots; }
+        }
+
         public static Paddle[] Paddles
         {
             get { return paddles; }
@@ -72,6 +78,7 @@ namespace Pacman
             dots.Clear();
             powerups.Clear();
             ghosts.Clear();
+            invaders.Clear();
             //Initializes border of map
             string line = "";
             int number = 0;

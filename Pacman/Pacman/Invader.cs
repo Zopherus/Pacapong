@@ -9,7 +9,7 @@ namespace Pacman
     //The Invader that attacks the paddle
     public class Invader
     {
-        private const int speed = 2;
+        private const int speed = 1;
 
         private Random random = new Random();
         public Rectangle Position { get; private set; }
@@ -21,12 +21,12 @@ namespace Pacman
             if (side == Player.Left)
             {
                 int positionX = random.Next(PacmanGame.horizontalSpace - 2 * PacmanGame.gridSize);
-                Position = new Rectangle(positionX, -PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize);
+                Position = new Rectangle(positionX, -10 * PacmanGame.gridSize, 2 * PacmanGame.gridSize, 2 * PacmanGame.gridSize);
             }
             else
             {
                 int positionX = random.Next(PacmanGame.screenWidth - PacmanGame.horizontalSpace + PacmanGame.gridSize, PacmanGame.screenWidth - PacmanGame.gridSize);
-                Position = new Rectangle(positionX, -PacmanGame.gridSize, PacmanGame.gridSize, PacmanGame.gridSize);
+                Position = new Rectangle(positionX, -10 * PacmanGame.gridSize, 2 * PacmanGame.gridSize, 2 * PacmanGame.gridSize);
             }
         }
 

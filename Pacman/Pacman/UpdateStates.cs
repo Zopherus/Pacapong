@@ -98,6 +98,11 @@ namespace Pacman
                 invader.Update();
             }
 
+            foreach (Shot shot in Map.Shots)
+            {
+                shot.Update();
+            }
+
             if (PacmanGame.pacman.PlayerCaught != null)
             {
                 timerCatch.tick(gameTime);

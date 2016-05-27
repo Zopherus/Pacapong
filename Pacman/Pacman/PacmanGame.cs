@@ -35,7 +35,7 @@ namespace Pacman
 
         public static Pacman pacman;
 
-        public static Texture2D PacmanTexture;
+        public static Texture2D[,] PacmanTextures = new Texture2D[4,2];
         public static Texture2D WallTexture;
         public static Texture2D DotTexture;
         public static Texture2D PowerupTexture;
@@ -86,7 +86,14 @@ namespace Pacman
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            PacmanTexture = Content.Load<Texture2D>("Sprites/PacmanSpritesheet");
+            PacmanTextures[0, 0] = Content.Load<Texture2D>("Sprites/PacmanClosedUp");
+            PacmanTextures[0, 1] = Content.Load<Texture2D>("Sprites/PacmanUp");
+            PacmanTextures[1, 0] = Content.Load<Texture2D>("Sprites/PacmanClosedRight");
+            PacmanTextures[1, 1] = Content.Load<Texture2D>("Sprites/PacmanRight");
+            PacmanTextures[2, 0] = Content.Load<Texture2D>("Sprites/PacmanClosedDown");
+            PacmanTextures[2, 1] = Content.Load<Texture2D>("Sprites/PacmanDown");
+            PacmanTextures[3, 0] = Content.Load<Texture2D>("Sprites/PacmanClosedLeft");
+            PacmanTextures[3, 1] = Content.Load<Texture2D>("Sprites/PacmanLeft");
             WallTexture = Content.Load<Texture2D>("Sprites/Wall");
             DotTexture = Content.Load<Texture2D>("Sprites/Dot");
             PowerupTexture = Content.Load<Texture2D>("Sprites/Powerup");
@@ -113,7 +120,8 @@ namespace Pacman
         {
             base.BeginRun();
             MediaPlayer.Play(MenuSong);
-        }
+        }
+
 
         protected override void Update(GameTime gameTime)
         {
