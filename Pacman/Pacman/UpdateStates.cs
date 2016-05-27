@@ -74,24 +74,19 @@ namespace Pacman
                 timerMaze.reset();
             }
 
-            if (PacmanGame.keyboard.IsKeyDown(Keys.W))
-                Map.Paddles[0].MoveUp();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.D))
-                Map.Paddles[0].MoveRight();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.S))
-                Map.Paddles[0].MoveDown();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.A))
-                Map.Paddles[0].MoveLeft();
-
-
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Up))
-                Map.Paddles[1].MoveUp();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Right))
-                Map.Paddles[1].MoveRight();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Down))
-                Map.Paddles[1].MoveDown();
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Left))
-                Map.Paddles[1].MoveLeft();
+            foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
+            {
+                foreach (Paddle paddle in Map.Paddles)
+                {
+                    Direction d;
+                    if (paddle.DirectionByKey.TryGetValue(key, out d))
+                    {
+                        paddle.Move(d);
+                    }
+                }
+            
+            }
+               
 
             foreach (Paddle paddle in Map.Paddles)
             {
@@ -174,6 +169,7 @@ namespace Pacman
                     ghost.moveOpposite();
                 }
             }
+            foreach (Invader invader in Map.Invaders){ invader.move(); }
         }
         public static void UpdateEnterName()
         {

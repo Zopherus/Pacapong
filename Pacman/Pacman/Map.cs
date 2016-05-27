@@ -12,6 +12,7 @@ namespace Pacman
     {
         private static List<Wall> walls = new List<Wall>();
         private static List<Node> nodes = new List<Node>();
+        private static List<Invader> invaders = new List<Invader>();
         //subtracting 2 to ignore the borders of screen
         private static bool[,] wallMap = new bool[PacmanGame.mapWidth / PacmanGame.gridSize, PacmanGame.mapHeight / PacmanGame.gridSize];
         // 0 is left paddle, 1 is right paddle
@@ -30,6 +31,11 @@ namespace Pacman
         public static List<Node> Nodes
         {
             get { return nodes; }
+        }
+
+        public static List<Invader> Invaders
+        {
+            get { return invaders; }
         }
 
         public static List<EmptySquare> EmptySquares
