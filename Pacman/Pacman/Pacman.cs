@@ -353,6 +353,7 @@ namespace Pacman
                 if (powerup.Position.Intersects(position))
                 {
                     Map.Powerups.Remove(powerup);
+                    PacmanGame.PowerUpSound.Play();
                     if (currentControl == Player.Left)
                     {
                         Map.Paddles[0].Score += 50;

@@ -12,9 +12,6 @@ Content\Sprites\Menu Pink.xnb
 Content\Sprites\Menu Purple.xnb
 Content\Sprites\Menu Yellow.xnb
 Content\Sprites\Invader.xnb
-Content\SpriteFonts\SpriteFont.xnb
-Content\Music\DebussyArabesqueMeme-ix.xnb
-Content\Music\LisztPaganiniChiptude.xnb
 Content\Sprites\PacmanClosedDown.xnb
 Content\Sprites\PacmanClosedLeft.xnb
 Content\Sprites\PacmanClosedRight.xnb
@@ -23,5 +20,12 @@ Content\Sprites\PacmanDown.xnb
 Content\Sprites\PacmanLeft.xnb
 Content\Sprites\PacmanRight.xnb
 Content\Sprites\PacmanUp.xnb
+Content\SpriteFonts\SpriteFont.xnb
+Content\Music\DebussyArabesqueMeme-ix.xnb
+Content\Music\LisztPaganiniChiptude.xnb
+Content\SoundEffects\GameEnd.xnb
+Content\SoundEffects\PowerDown.xnb
+Content\SoundEffects\PowerUp.xnb
+Content\SoundEffects\Explosion.xnb
 Content\Music\DebussyArabesqueMeme-ix.wma
 Content\Music\LisztPaganiniChiptude.wma

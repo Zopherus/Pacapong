@@ -44,6 +44,7 @@ namespace Pacman
         public static Texture2D BlackTexture;
         public static Texture2D InvaderTexture;
         public static SpriteFont spriteFont;
+
         public static Song MenuSong;
         public static Song GameSong;
 
@@ -54,6 +55,11 @@ namespace Pacman
         public static Texture2D paddleBox;
 
         public static GameState gameState;
+
+        public static SoundEffect GameEndSound;
+        public static SoundEffect PowerDownSound;
+        public static SoundEffect PowerUpSound;
+        public static SoundEffect ExplosionSound;
 
         public PacmanGame()
         {
@@ -114,6 +120,11 @@ namespace Pacman
 
             GameSong = Content.Load<Song>("Music/LisztPaganiniChiptude");
             MenuSong = Content.Load<Song>("Music/DebussyArabesqueMeme-ix");
+
+            GameEndSound = Content.Load<SoundEffect>("SoundEffects/GameEnd");
+            PowerDownSound = Content.Load<SoundEffect>("SoundEffects/PowerDown");
+            PowerUpSound = Content.Load<SoundEffect>("SoundEffects/PowerUp");
+            ExplosionSound = Content.Load<SoundEffect>("SoundEffects/Explosion");
         }
 
         protected override void BeginRun()

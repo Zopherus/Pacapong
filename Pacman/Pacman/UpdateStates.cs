@@ -43,9 +43,12 @@ namespace Pacman
                 Program.game.Exit();
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
+
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
+                {
                     PacmanGame.gameState = GameState.Maze;
-                    MediaPlayer.Play(PacmanGame.GameSong);
+                    
+                }
                 if (Menu.QuitRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     Program.game.Exit();
             }
@@ -56,6 +59,8 @@ namespace Pacman
             if (Maze)
             {
                 Program.game.Start();
+                MediaPlayer.Stop();
+                MediaPlayer.Play(PacmanGame.GameSong);
                 Maze = false;
             }
             timerGhost.tick(gameTime);
@@ -70,6 +75,8 @@ namespace Pacman
             if (timerGame.TimeMilliseconds >= timerGame.Interval)
             {
                 PacmanGame.gameState = GameState.GameEnd;
+                MediaPlayer.Stop();
+                PacmanGame.GameEndSound.Play();
             }
             foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
             {
@@ -139,6 +146,7 @@ namespace Pacman
                 {
                     timerPowerup.reset();
                     PacmanGame.pacman.IsPowerUp = false;
+                    PacmanGame.PowerDownSound.Play();
                 }
             }
 
