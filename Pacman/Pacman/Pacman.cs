@@ -296,13 +296,15 @@ namespace Pacman
                     return;
                 if (!IsWithinMaze())
                     return;
-                movementDirection = Direction.Up;
+                if(checkIntersectionWalls(new Rectangle(position.X, position.Y - speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
+                    movementDirection = Direction.Up;
             }
             else if (direction == Direction.Left)
             {
                 if (currentControl == Player.Left)
                     return;
-                movementDirection = Direction.Left;
+                if (checkIntersectionWalls(new Rectangle(position.X - speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
+                    movementDirection = Direction.Left;
             }
             else if (direction == Direction.Down)
             {
@@ -312,13 +314,15 @@ namespace Pacman
                     return;
                 if (!IsWithinMaze())
                     return;
-                movementDirection = Direction.Down;
+                if (checkIntersectionWalls(new Rectangle(position.X, position.Y + speed, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
+                    movementDirection = Direction.Down;
             }
             else if (direction == Direction.Right)
             {
                 if (currentControl == Player.Right)
                     return;
-                movementDirection = Direction.Right;
+                if (checkIntersectionWalls(new Rectangle(position.X + speed, position.Y, PacmanGame.gridSize, PacmanGame.gridSize)).Item1)
+                    movementDirection = Direction.Right;
             }
         }
 
@@ -421,7 +425,7 @@ namespace Pacman
         {
             if (distanceMoved == 0 && oldDistanceMoved == 0)
             {
-                movementDirection = (Direction)(new Random().Next(1, 5));
+                changeDirection((Direction)(new Random().Next(1, 5)));
             }
         }
 
