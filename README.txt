@@ -1,4 +1,3 @@
-Pacman Game written in XNA with Visual Studios 2013
-By Eric Zhu in 2015
-Do whatever you want with all of this stuff I don't care
-Credit to Ray Fung for bug testing and shrekting my previous versions.
+Pacman/Pong Game written in XNA with Visual Studios 2013
+By Eric Zhu, Wyatt Carpenter, Gokul Gowri, and Ray Fung
+Dedicated into the public domain under CC0 1.0 (for more information, see https://creativecommons.org/publicdomain/zero/1.0/)

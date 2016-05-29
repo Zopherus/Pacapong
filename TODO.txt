@@ -1,4 +1,0 @@
-Make the Ghosts blink as the powerup runs out
-Make spawning ghost blink as they spawn
-Multiple Lives?
-Move off screen onto the other side?
