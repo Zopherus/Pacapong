@@ -86,7 +86,7 @@ namespace Pacman
                     if (paddle.DirectionByKey.TryGetValue(key, out d))
                     {
                         paddle.Move(d);
-                        if (paddle.Player == PacmanGame.pacman.currentControl && PacmanGame.oldKeyboard.IsKeyUp(key))
+                        if (paddle.Player == PacmanGame.pacman.currentControl)
                         {
                             PacmanGame.pacman.changeDirection(d);
                         }

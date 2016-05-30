@@ -52,11 +52,14 @@ namespace Pacman
 
         public void update()
         {
-            position.Y = (position.Y / speed) * speed;
+            position.Y = (position.Y / speed) * speed; //I don't know why, but this line is crucial
             oldDistanceMoved = distanceMoved;
             calculateDistanceMoved();
             oldPosition = position;
-            clearDirection();
+            if (distanceMoved == 0 && oldDistanceMoved == 0)
+            {
+                movementDirection = ((Direction)(new Random().Next(1, 5)));//if player is stopped at a wall, pacman picks another direction
+            }
             moveOppositeDirection();
             move();
             checkIntersectionDots();
@@ -417,15 +420,6 @@ namespace Pacman
                         tryingDirection = null;
                     }
                     break;
-            }
-        }
-
-        //Clears both directions if player is stopped at a wall
-        private void clearDirection()
-        {
-            if (distanceMoved == 0 && oldDistanceMoved == 0)
-            {
-                changeDirection((Direction)(new Random().Next(1, 5)));
             }
         }
 
