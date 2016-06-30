@@ -83,7 +83,7 @@ namespace Pacman
             string line = "";
             int number = 0;
             int mapNumber = new Random().Next(1, 5);
-            using (StreamReader sr = new StreamReader("Content/Text Files/pacman" + mapNumber.ToString() + ".txt"))
+            using (StreamReader sr = new StreamReader("Maps/pacman" + mapNumber.ToString() + ".txt"))
             {
                 while (true)
                 {
