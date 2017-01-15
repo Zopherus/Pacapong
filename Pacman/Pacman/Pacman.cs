@@ -9,8 +9,7 @@ namespace Pacman
     //The character that the player uses
     public class Pacman
     {
-        private const int speed = 6; //Bugs happen if the speed doesn't divide the gridSize
-
+        private const int speed = 15; //Bugs happen if the speed doesn't divide the gridSize
 
         public Direction? oldMovementDirection;
         public Direction? movementDirection;
@@ -52,13 +51,14 @@ namespace Pacman
 
         public void update()
         {
-            position.Y = (position.Y / speed) * speed; //I don't know why, but this line is crucial
+            // Uses int division to round the y position down to the nearest multiple of the speed to ensure it lines up with the grid
+            position.Y = (position.Y / speed) * speed; 
             oldDistanceMoved = distanceMoved;
             calculateDistanceMoved();
             oldPosition = position;
             if (distanceMoved == 0 && oldDistanceMoved == 0)
             {
-                movementDirection = ((Direction)(new Random().Next(1, 5)));//if player is stopped at a wall, pacman picks another direction
+                movementDirection = ((Direction)(new Random().Next(1, 5))); // If player is stopped at a wall, pacman picks another direction
             }
             moveOppositeDirection();
             move();
@@ -110,7 +110,7 @@ namespace Pacman
             }
         }
 
-        //Kills ghost during powerup
+        // Kills ghost during powerup
         public void checkIntersectionGhostPowerup()
         {
             foreach (Ghost ghost in Map.Ghosts)
@@ -151,9 +151,7 @@ namespace Pacman
                 position.Y = Map.Paddles[1].Position.Y - CatchDifferential;
                 return;
             }
-
-
-
+            
             switch(movementDirection)
             {
                 case Direction.Up:
@@ -170,6 +168,8 @@ namespace Pacman
                     break;
             }
         }
+
+
                                                     
         //stops the pacman from going through walls
         //sets the pacman immediately adjacent to the wall it ran into
