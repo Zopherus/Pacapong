@@ -49,8 +49,25 @@ namespace Pacman
                     PacmanGame.gameState = GameState.Maze;
                     
                 }
+                if (Menu.HighScoreRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
+                {
+                    PacmanGame.gameState = GameState.HighScore;
+
+                }
                 if (Menu.QuitRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     Program.game.Exit();
+            }
+        }
+
+        public static void UpdateHighScoreMenu()
+        {
+            if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
+            {
+                if (HighScoreMenu.BackToMenuRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
+                {
+                    PacmanGame.gameState = GameState.Menu;
+
+                }
             }
         }
 
@@ -174,6 +191,20 @@ namespace Pacman
             timerNewGame.tick(gameTime);
             if (timerNewGame.TimeMilliseconds >= timerNewGame.Interval)
             {
+                //save the high score to file if it's in the top 5
+                int score = Map.Paddles[0].Score; //read the high score + list
+                List<int> highScores = HighScoreMenu.GetHighScores();
+
+                highScores.Add(score); //add the highscore to the list
+                highScores.Sort();
+                highScores.RemoveAt(5);
+
+                StreamWriter writer = new StreamWriter("HighScores.txt"); //rewrite the list to file
+                foreach (int i in highScores)
+                {
+                    writer.WriteLine(i.ToString());
+                }
+
                 Maze = true;
                 timerGame.reset();
                 timerNewGame.reset();

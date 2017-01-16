@@ -31,6 +31,24 @@ namespace Pacman
                     Menu.QuitRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Quit").Y / 2), Color.White);
         }
 
+        public static void DrawHighScoreMenu()
+        {
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxPurple, HighScoreMenu.BackToMenuRectangle, Color.White);
+
+            List<int> highScores = HighScoreMenu.GetHighScores(); //print the high scores
+            for(int i = 0; i < 5; i++)
+            {
+                string stringToDraw = (i + 1).ToString() + ". " + highScores[i].ToString();
+                PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, stringToDraw,
+                new Vector2(PacmanGame.screenWidth / 2 - PacmanGame.spriteFont.MeasureString(stringToDraw).X / 2,
+                    (i + 1) * PacmanGame.screenHeight / 7 - PacmanGame.spriteFont.MeasureString(stringToDraw).Y / 2), Color.White);
+            }
+
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Back",
+                new Vector2(HighScoreMenu.BackToMenuRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Back").X / 2,
+                    HighScoreMenu.BackToMenuRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Back").Y / 2), Color.White);
+        }
+
         public static void DrawMaze()
         {
             foreach (Wall wall in Map.Walls)
