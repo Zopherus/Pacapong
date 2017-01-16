@@ -33,6 +33,11 @@ namespace Pacman
         public static MouseState mouse;
         public static MouseState oldMouse;
 
+        public static int[] maps = new int[3];
+        // The map number which the player is on
+        public static int mapNumber;
+
+        public static int pacmanLives;
         public static Pacman pacman;
 
         public static Texture2D[,] PacmanTextures = new Texture2D[4,2];
@@ -83,6 +88,16 @@ namespace Pacman
 
         protected override void Initialize()
         {
+            pacmanLives = 3;
+            List<int> numbers = Enumerable.Range(1, 4).ToList();
+
+            // Pick 3 maps to play
+            for (int i = 0; i < 3; i++)
+            {
+                int number = numbers.ElementAt(new Random().Next(numbers.Count));
+                numbers.Remove(number);
+                maps[i] = number;
+            }
             MediaPlayer.IsRepeating = true;
             PacmanGame.gameState = GameState.Menu;
             Start();

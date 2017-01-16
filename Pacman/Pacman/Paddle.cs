@@ -30,9 +30,6 @@ namespace Pacman
                 DirectionByKey.Add(Keys.A, Direction.Left);
                 DirectionByKey.Add(Keys.S, Direction.Down);
                 DirectionByKey.Add(Keys.D, Direction.Right);
-            }
-            if (Player == Player.Right)
-            {
                 DirectionByKey.Add(Keys.Up, Direction.Up);
                 DirectionByKey.Add(Keys.Left, Direction.Left);
                 DirectionByKey.Add(Keys.Down, Direction.Down);
@@ -69,6 +66,18 @@ namespace Pacman
             }
         }
 
+        public void MoveAI()
+        {
+            if (PacmanGame.pacman.PlayerCaught == Player.Right)
+                return;
+            int pacmanMiddle = (PacmanGame.pacman.Position.Top + PacmanGame.pacman.Position.Bottom) /2;
+            int paddleMiddle = (Position.Top + Position.Bottom) / 2;
+            if (paddleMiddle > pacmanMiddle + 2 * speed)
+                Position = new Rectangle(Position.X, Position.Y - speed, Position.Width, Position.Height);
+            else if (paddleMiddle < pacmanMiddle - 2 *speed)
+                Position = new Rectangle(Position.X, Position.Y + speed, Position.Width, Position.Height);
+        }
+
         public void Shoot()
         {
             Map.Shots.Add(new Shot(Player));
@@ -85,5 +94,7 @@ namespace Pacman
                 PacmanGame.pacman.CatchDifferential = Position.Y - PacmanGame.pacman.Position.Y;
             }
         }
+
+
     }
 }

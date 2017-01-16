@@ -91,10 +91,14 @@ namespace Pacman
             }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTextures[(int)PacmanGame.pacman.movementDirection - 1, Convert.ToInt32(PacmanGame.pacman.IsMouthOpen)], PacmanGame.pacman.Position, Color.White);
 
-           // PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTexture, PacmanGame.pacman.Position, Color.White);
+           
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, ((UpdateStates.timerGame.Interval - UpdateStates.timerGame.TimeMilliseconds) / 1000).ToString(), new Vector2(PacmanGame.screenWidth / 2, 0), Color.Black);
+            for (int i = 0; i < PacmanGame.pacmanLives; i++)
+            {
+                PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTextures[0, 0], new Rectangle(i * 40, PacmanGame.screenHeight - 40, 40, 40), Color.White);
+            }
         }
         
         public static void DrawGameEnd()
@@ -104,11 +108,11 @@ namespace Pacman
             string display = "";
             if (Map.Paddles[0].Score > Map.Paddles[1].Score)
             {
-                display = "Left Player Wins!";
+                display = "You Win!";
             }
             else if (Map.Paddles[1].Score > Map.Paddles[0].Score)
             {
-                display = "Right Player Wins!";
+                display = "You Lose!";
             }
             else
             {

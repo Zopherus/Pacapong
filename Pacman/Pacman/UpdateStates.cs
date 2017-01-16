@@ -14,9 +14,8 @@ namespace Pacman
     {
         private static Timer timerGhost = new Timer(5000);
         private static Timer timerPowerup = new Timer(5000);
-        public static Timer timerGame = new Timer(30000);
+        public static Timer timerGame = new Timer(10000);
         public static Timer timerCatch = new Timer(1000);
-
         private static Timer timerNewGame = new Timer(5000);
 
         //Used to reset the maze
@@ -43,7 +42,6 @@ namespace Pacman
                 Program.game.Exit();
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
-
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                 {
                     PacmanGame.gameState = GameState.Maze;
@@ -75,11 +73,20 @@ namespace Pacman
         {
             if (Maze)
             {
-                Program.game.Start();
+                if (PacmanGame.mapNumber == 0)
+                    Program.game.Start();
+                else
+                {
+                    UpdateStates.TimerMaze.reset();
+                    PacmanGame.pacman = new Pacman(new Rectangle(0, 0, PacmanGame.gridSize, PacmanGame.gridSize));
+                    PacmanGame.pacman.PlayerCaught = Player.Left;
+                    Map.InitializeMap();
+                }
                 MediaPlayer.Stop();
                 MediaPlayer.Play(PacmanGame.GameSong);
                 Maze = false;
             }
+            
             timerGhost.tick(gameTime);
             if (timerGhost.TimeMilliseconds >= timerGhost.Interval && Map.Ghosts.Count < 4)
             {
@@ -87,31 +94,42 @@ namespace Pacman
                 timerGhost.reset();
             }
             timerGame.tick(gameTime);
-
-
+            
             if (timerGame.TimeMilliseconds >= timerGame.Interval)
             {
                 PacmanGame.gameState = GameState.GameEnd;
                 MediaPlayer.Stop();
                 PacmanGame.GameEndSound.Play();
+                if (Map.Paddles[0].Score > Map.Paddles[1].Score)
+                {
+                    PacmanGame.mapNumber++;
+                }
+                else if (Map.Paddles[1].Score > Map.Paddles[0].Score)
+                {
+                    PacmanGame.pacmanLives--;
+                }
+                else
+                {
+
+                }
             }
             foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
             {
-                foreach (Paddle paddle in Map.Paddles)
+                Direction d;
+                if (Map.Paddles[0].DirectionByKey.TryGetValue(key, out d))
                 {
-                    Direction d;
-                    if (paddle.DirectionByKey.TryGetValue(key, out d))
+                    Map.Paddles[0].Move(d);
+                    if (PacmanGame.pacman.currentControl == Map.Paddles[0].Player)
                     {
-                        paddle.Move(d);
-                        if (paddle.Player == PacmanGame.pacman.currentControl)
-                        {
-                            PacmanGame.pacman.changeDirection(d);
-                        }
+                        PacmanGame.pacman.changeDirection(d);
                     }
                 }
             }
-               
-
+            Map.Paddles[1].MoveAI();
+            if (PacmanGame.pacman.currentControl == Map.Paddles[1].Player)
+            {
+                PacmanGame.pacman.changeDirection((Direction)(new Random().Next(Enum.GetNames(typeof(Direction)).Length)));
+            }
             foreach (Paddle paddle in Map.Paddles)
             {
                 paddle.CatchPacman();
