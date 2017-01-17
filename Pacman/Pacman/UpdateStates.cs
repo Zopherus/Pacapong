@@ -26,6 +26,11 @@ namespace Pacman
 
         public static bool enterNameError = false;
 
+        private static int currentSelectedButton = 0;
+        public static int CurrentSelectedButton { get { return currentSelectedButton; } } //make currentSelectedButton accessible for when drawing buttons
+
+        private static List<Keys> previousKeysDown = new List<Keys>(); //list of keys previously down (to check for key clicks, not just presses)
+
         public static Timer TimerMaze
         {
             get { return timerGhost; }
@@ -38,6 +43,42 @@ namespace Pacman
 
         public static void UpdateMenu()
         {
+            //keyboard functionality to menu
+            if (!PacmanGame.keyboard.IsKeyDown(Keys.Down) && previousKeysDown.Contains(Keys.Down)) //only register press when releasing
+            {
+                currentSelectedButton += 1; //plus because buttons are numbered as decreasing going bottom -> up
+                currentSelectedButton %= 4; //3 buttons, so reset back to zero every 3 presses
+                previousKeysDown.Remove(Keys.Down);
+            }
+            if(PacmanGame.keyboard.IsKeyDown(Keys.Down) && !previousKeysDown.Contains(Keys.Down)) { previousKeysDown.Add(Keys.Down); }
+
+            if (!PacmanGame.keyboard.IsKeyDown(Keys.Up) && previousKeysDown.Contains(Keys.Up)) //only register press when releasing
+            {
+                currentSelectedButton -= 1; //minus because buttons are numbered as increasing going top -> down
+                if (currentSelectedButton == -1) { currentSelectedButton = 3; } //if it goes negative, bring it back to 3
+                currentSelectedButton %= 4; //3 buttons, so reset back to zero every 3 presses
+                previousKeysDown.Remove(Keys.Up);
+            }
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && !previousKeysDown.Contains(Keys.Up)) { previousKeysDown.Add(Keys.Up); }
+
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Enter))
+            {
+                switch (currentSelectedButton)
+                {
+                    case 1:
+                        PacmanGame.gameState = GameState.Maze; //play button selected
+                        currentSelectedButton = 0; //reset for later use
+                        break;
+                    case 2:
+                        PacmanGame.gameState = GameState.HighScore; //high score button selected
+                        currentSelectedButton = 0; //reset for later use
+                        break;
+                    case 3:
+                        Program.game.Exit();
+                        break;
+                }
+            }
+
             if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
                 Program.game.Exit();
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
@@ -59,6 +100,19 @@ namespace Pacman
 
         public static void UpdateHighScoreMenu()
         {
+            //keyboard functionality to high score screen
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Down)) { currentSelectedButton = 1; } //only 1 button, so can only equal 1
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Up)) { currentSelectedButton = 1; } //only 1 button, so can only equal 1
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Enter))
+            {
+                if(currentSelectedButton == 1)
+                {
+                    PacmanGame.gameState = GameState.Menu; //back button selected
+                    currentSelectedButton = 0; //reset for later use
+                }
+            }
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
+                PacmanGame.gameState = GameState.Menu;
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
                 if (HighScoreMenu.BackToMenuRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
@@ -215,18 +269,21 @@ namespace Pacman
 
                 highScores.Add(score); //add the highscore to the list
                 highScores.Sort();
-                highScores.RemoveAt(5);
+                highScores.Reverse(); //reverse, since sort does it backwards
+                highScores.RemoveAt(5); //remove the sixth element (we only want five)
 
-                StreamWriter writer = new StreamWriter("HighScores.txt"); //rewrite the list to file
-                foreach (int i in highScores)
+                using (StreamWriter writer = new StreamWriter("HighScores.txt"))
                 {
-                    writer.WriteLine(i.ToString());
-                }
+                    foreach (int i in highScores) //rewrite the list to file
+                    {
+                        writer.WriteLine(i.ToString());
+                    }
 
-                Maze = true;
-                timerGame.reset();
-                timerNewGame.reset();
-                PacmanGame.gameState = GameState.Maze;
+                    Maze = true;
+                    timerGame.reset();
+                    timerNewGame.reset();
+                    PacmanGame.gameState = GameState.Maze;
+                }
             }
         }
     }
