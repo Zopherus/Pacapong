@@ -18,19 +18,24 @@ namespace Pacman
 
         public static List<int> GetHighScores()
         {
-            using (StreamReader reader = new StreamReader("HighScores.txt"))
+            try
             {
-                List<int> highScores = new List<int>(new int[] { 0, 0, 0, 0, 0 });
-                string fileRead = reader.ReadLine();
-                int iterator = 0;
-                while (fileRead != null)
+                using (StreamReader reader = new StreamReader("HighScores.txt"))
                 {
-                    highScores[iterator] = int.Parse(fileRead);
-                    iterator++;
-                    fileRead = reader.ReadLine();
+                    List<int> highScores = new List<int>(new int[] { 0, 0, 0, 0, 0 });
+                    string fileRead = reader.ReadLine();
+                    int iterator = 0;
+                    while (fileRead != null)
+                    {
+                        highScores[iterator] = int.Parse(fileRead);
+                        iterator++;
+                        fileRead = reader.ReadLine();
+                    }
+                    return highScores;
                 }
-                return highScores;
             }
+            catch { }
+            return null;
         }
     }
 }

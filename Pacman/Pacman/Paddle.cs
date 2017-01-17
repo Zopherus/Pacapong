@@ -11,9 +11,10 @@ namespace Pacman
 {
     class Paddle
     {
-        public const int speed = 6;
+        public static int speed = 6;
         public Rectangle Position { get; private set; }
         public Player Player { get; private set; }
+        public int totalScore;
         public int Score;
         public Dictionary<Keys, Direction> DirectionByKey { get; private set; }
         

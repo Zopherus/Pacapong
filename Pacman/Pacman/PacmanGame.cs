@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 namespace Pacman
 {
     public enum Player { Left, Right };
-    public enum GameState { Menu, HighScore, Maze, GameEnd}; //enum for different game states (different game levels)
+    public enum GameState { Menu, HighScore, Maze, LevelEnd, GameEnd}; //enum for different game states (different game levels)
     public enum Direction { Up = 1, Right, Down, Left};
 
     public class PacmanGame : Game
@@ -155,14 +155,24 @@ namespace Pacman
             oldMouse = mouse;
             keyboard = Keyboard.GetState();
             mouse = Mouse.GetState();
-            if (gameState == GameState.Menu)
-                UpdateStates.UpdateMenu();
-            if (gameState == GameState.HighScore)
-                UpdateStates.UpdateHighScoreMenu();
-            if (gameState == GameState.Maze)
-                UpdateStates.UpdateMaze(gameTime);
-            if (gameState == GameState.GameEnd)
-                UpdateStates.UpdateGameEnd(gameTime);
+            switch(gameState)
+            {
+                case GameState.Menu:
+                    UpdateStates.UpdateMenu();
+                    break;
+                case GameState.HighScore:
+                    UpdateStates.UpdateHighScore();
+                    break;
+                case GameState.Maze:
+                    UpdateStates.UpdateMaze(gameTime);
+                    break;
+                case GameState.LevelEnd:
+                    UpdateStates.UpdateLevelEnd(gameTime);
+                    break;
+                case GameState.GameEnd:
+                    UpdateStates.UpdateGameEnd(gameTime);
+                    break;
+            }
             base.Update(gameTime);
         }
 
@@ -170,14 +180,24 @@ namespace Pacman
         {
             GraphicsDevice.Clear(Color.DimGray);
             spriteBatch.Begin();
-            if (gameState == GameState.Menu)
-                DrawStates.DrawMenu();
-            if (gameState == GameState.HighScore)
-                DrawStates.DrawHighScoreMenu();
-            if (gameState == GameState.Maze)
-                DrawStates.DrawMaze();
-            if (gameState == GameState.GameEnd)
-                DrawStates.DrawGameEnd();
+            switch (gameState)
+            {
+                case GameState.Menu:
+                    DrawStates.DrawMenu();
+                    break;
+                case GameState.HighScore:
+                    DrawStates.DrawHighScore();
+                    break;
+                case GameState.Maze:
+                    DrawStates.DrawMaze();
+                    break;
+                case GameState.LevelEnd:
+                    DrawStates.DrawLevelEnd();
+                    break;
+                case GameState.GameEnd:
+                    DrawStates.DrawGameEnd();
+                    break;
+            }
             spriteBatch.End();
             base.Draw(gameTime);
         }

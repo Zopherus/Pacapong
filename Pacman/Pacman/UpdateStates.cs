@@ -14,9 +14,10 @@ namespace Pacman
     {
         private static Timer timerGhost = new Timer(5000);
         private static Timer timerPowerup = new Timer(5000);
-        public static Timer timerGame = new Timer(10000);
+        public static Timer timerGame = new Timer(30000);
         public static Timer timerCatch = new Timer(1000);
-        private static Timer timerNewGame = new Timer(5000);
+        private static Timer timerNextLevel = new Timer(5000);
+        private static Timer timerGameEnd = new Timer(10000);
 
         //Used to reset the maze
         private static bool Maze = true;
@@ -59,7 +60,10 @@ namespace Pacman
                 currentSelectedButton %= 4; //3 buttons, so reset back to zero every 3 presses
                 previousKeysDown.Remove(Keys.Up);
             }
-            if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && !previousKeysDown.Contains(Keys.Up)) { previousKeysDown.Add(Keys.Up); }
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Up) && !previousKeysDown.Contains(Keys.Up))
+            {
+                previousKeysDown.Add(Keys.Up);
+            }
 
             if (PacmanGame.keyboard.IsKeyDown(Keys.Enter))
             {
@@ -98,7 +102,7 @@ namespace Pacman
             }
         }
 
-        public static void UpdateHighScoreMenu()
+        public static void UpdateHighScore()
         {
             //keyboard functionality to high score screen
             if (PacmanGame.keyboard.IsKeyDown(Keys.Down)) { currentSelectedButton = 1; } //only 1 button, so can only equal 1
@@ -151,22 +155,26 @@ namespace Pacman
             
             if (timerGame.TimeMilliseconds >= timerGame.Interval)
             {
-                PacmanGame.gameState = GameState.GameEnd;
+                PacmanGame.gameState = GameState.LevelEnd;
                 MediaPlayer.Stop();
                 PacmanGame.GameEndSound.Play();
                 if (Map.Paddles[0].Score > Map.Paddles[1].Score)
                 {
+                    Pacman.speed += 4 + PacmanGame.mapNumber;
+                    Paddle.speed += 4 + PacmanGame.mapNumber;
                     PacmanGame.mapNumber++;
+                    Map.Paddles[0].totalScore += Map.Paddles[0].Score;
+                    if (PacmanGame.mapNumber > 3)
+                        PacmanGame.gameState = GameState.GameEnd;
                 }
                 else if (Map.Paddles[1].Score > Map.Paddles[0].Score)
                 {
                     PacmanGame.pacmanLives--;
-                }
-                else
-                {
-
+                    if (PacmanGame.pacmanLives == 0)
+                        PacmanGame.gameState = GameState.GameEnd;
                 }
             }
+
             foreach (Keys key in PacmanGame.keyboard.GetPressedKeys())
             {
                 Direction d;
@@ -239,8 +247,6 @@ namespace Pacman
                 }
             }
 
-
-
             if (!PacmanGame.pacman.IsPowerUp)
             {
                 foreach (Ghost ghost in Map.Ghosts)
@@ -258,13 +264,25 @@ namespace Pacman
             foreach (Invader invader in Map.Invaders){ invader.move(); }
         }
 
+        public static void UpdateLevelEnd(GameTime gameTime)
+        {
+            timerNextLevel.tick(gameTime);
+            if (timerNextLevel.TimeMilliseconds >= timerNextLevel.Interval)
+            {
+                Maze = true;
+                timerGame.reset();
+                timerNextLevel.reset();
+                PacmanGame.gameState = GameState.Maze;
+            }
+        }
+
         public static void UpdateGameEnd(GameTime gameTime)
         {
-            timerNewGame.tick(gameTime);
-            if (timerNewGame.TimeMilliseconds >= timerNewGame.Interval)
+            timerGameEnd.tick(gameTime);
+            if (timerGameEnd.TimeMilliseconds >= timerNextLevel.Interval)
             {
                 //save the high score to file if it's in the top 5
-                int score = Map.Paddles[0].Score; //read the high score + list
+                int score = Map.Paddles[0].totalScore; //read the high score + list
                 List<int> highScores = HighScoreMenu.GetHighScores();
 
                 highScores.Add(score); //add the highscore to the list
@@ -278,13 +296,13 @@ namespace Pacman
                     {
                         writer.WriteLine(i.ToString());
                     }
-
-                    Maze = true;
-                    timerGame.reset();
-                    timerNewGame.reset();
-                    PacmanGame.gameState = GameState.Maze;
                 }
-            }
+                Maze = true;
+                timerGame.reset();
+                timerNextLevel.reset();
+                timerGame.reset();
+                PacmanGame.gameState = GameState.HighScore;
+            }   
         }
     }
 }

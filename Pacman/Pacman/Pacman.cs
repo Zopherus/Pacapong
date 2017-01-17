@@ -9,10 +9,10 @@ namespace Pacman
     //The character that the player uses
     public class Pacman
     {
-        private const int speed = 15; //Bugs happen if the speed doesn't divide the gridSize
+        public static int speed = 6; //Bugs happen if the speed doesn't divide the gridSize
 
         public Direction? oldMovementDirection;
-        public Direction? movementDirection;
+        public Direction? movementDirection = Direction.Right;
         private double oldDistanceMoved;
         private double distanceMoved;
         //Used to continue the pacman in the direction already going
@@ -38,7 +38,8 @@ namespace Pacman
 
         public Player currentControl;
 
-        public Pacman() { }
+        public Pacman() {}
+        
         public Pacman(Rectangle position)
         {
             this.position = position;

@@ -47,7 +47,7 @@ namespace Pacman
                     Menu.QuitRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Quit").Y / 2), quitColor);
         }
 
-        public static void DrawHighScoreMenu()
+        public static void DrawHighScore()
         {
             Color buttonColor = Color.White;
             if(UpdateStates.CurrentSelectedButton == 1) //change color of button to denote currently selected button (for keyboard controls)
@@ -116,6 +116,9 @@ namespace Pacman
            
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
+            string message = "Level: " + (PacmanGame.mapNumber + 1).ToString();
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, message, new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(message).X, 
+                PacmanGame.screenHeight - PacmanGame.spriteFont.MeasureString(message).Y), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, ((UpdateStates.timerGame.Interval - UpdateStates.timerGame.TimeMilliseconds) / 1000).ToString(), new Vector2(PacmanGame.screenWidth / 2, 0), Color.Black);
             for (int i = 0; i < PacmanGame.pacmanLives; i++)
             {
@@ -123,22 +126,36 @@ namespace Pacman
             }
         }
         
-        public static void DrawGameEnd()
+        public static void DrawLevelEnd()
         {
             // Draw exact same thing as in maze, but with the winner
             DrawMaze();
             string display = "";
-            if (Map.Paddles[0].Score > Map.Paddles[1].Score)
+            if (Map.Paddles[0].Score >= Map.Paddles[1].Score)
             {
-                display = "You Win!";
+                display = "You beat the level!";
             }
             else if (Map.Paddles[1].Score > Map.Paddles[0].Score)
             {
-                display = "You Lose!";
+                display = "You couldn't beat the level!";
             }
-            else
+
+            float stringHeight = PacmanGame.spriteFont.MeasureString(display).Y;
+            float stringWidth = PacmanGame.spriteFont.MeasureString(display).X;
+
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, display, new Vector2((PacmanGame.screenWidth - stringWidth) / 2, PacmanGame.screenHeight - stringHeight), Color.Black);
+        }
+
+        public static void DrawGameEnd()
+        {
+            string display = "";
+            if (PacmanGame.mapNumber > 3)
             {
-                display = "It's a Thai!";
+                display = "You Won!";
+            }
+            else if (PacmanGame.pacmanLives <= 0)
+            {
+                display = "You Lost. Try again.";
             }
 
             float stringHeight = PacmanGame.spriteFont.MeasureString(display).Y;
