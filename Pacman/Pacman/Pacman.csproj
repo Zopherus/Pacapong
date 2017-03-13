@@ -92,6 +92,7 @@
     <Compile Include="EmptySquare.cs" />
     <Compile Include="Invader.cs" />
     <Compile Include="HighScoreMenu.cs" />
+    <Compile Include="HelpMenu.cs" />
     <Compile Include="PacmanGame.cs" />
     <Compile Include="Ghost.cs" />
     <Compile Include="Paddle.cs" />

@@ -12,7 +12,7 @@ using Microsoft.Xna.Framework.Media;
 namespace Pacman
 {
     public enum Player { Left, Right };
-    public enum GameState { Menu, HighScore, Maze, LevelEnd, GameEnd}; //enum for different game states (different game levels)
+    public enum GameState { Menu, HighScore, Help, Maze, LevelEnd, GameEnd}; //enum for different game states (different game levels)
     public enum Direction { Up = 1, Right, Down, Left};
 
     public class PacmanGame : Game
@@ -163,6 +163,9 @@ namespace Pacman
                 case GameState.HighScore:
                     UpdateStates.UpdateHighScore();
                     break;
+                case GameState.Help:
+                    UpdateStates.UpdateHelp();
+                    break;
                 case GameState.Maze:
                     UpdateStates.UpdateMaze(gameTime);
                     break;
@@ -187,6 +190,9 @@ namespace Pacman
                     break;
                 case GameState.HighScore:
                     DrawStates.DrawHighScore();
+                    break;
+                case GameState.Help:
+                    DrawStates.DrawHelp();
                     break;
                 case GameState.Maze:
                     DrawStates.DrawMaze();

@@ -17,6 +17,7 @@ namespace Pacman
             Color playColor = Color.White;
             Color quitColor = Color.White;
             Color highScoreColor = Color.White;
+            Color helpColor = Color.White;
             switch(UpdateStates.CurrentSelectedButton) //change color of button to denote currently selected button (for keyboard controls)
             {
                 case 1:
@@ -26,12 +27,16 @@ namespace Pacman
                     highScoreColor = Color.Red;
                     break;
                 case 3:
+                    helpColor = Color.Red;
+                    break;
+                case 4:
                     quitColor = Color.Red;
                     break;
             }
 
             PacmanGame.spriteBatch.Draw(PacmanGame.boxGreen, Menu.PlayRectangle, playColor);
             PacmanGame.spriteBatch.Draw(PacmanGame.boxPink, Menu.QuitRectangle, quitColor);
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxYellow, Menu.HelpRectangle, helpColor);
             PacmanGame.spriteBatch.Draw(PacmanGame.boxPurple, Menu.HighScoreRectangle, highScoreColor);
 
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Play", 
@@ -41,6 +46,10 @@ namespace Pacman
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "High Scores",
                 new Vector2(Menu.HighScoreRectangle.Center.X - PacmanGame.spriteFont.MeasureString("High Scores").X / 2,
                     Menu.HighScoreRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("High Scores").Y / 2), highScoreColor);
+
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Help",
+                new Vector2(Menu.HelpRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Help").X / 2,
+                    Menu.HelpRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Help").Y / 2), helpColor);
 
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Quit",
                 new Vector2(Menu.QuitRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Quit").X / 2,
@@ -66,6 +75,32 @@ namespace Pacman
                     (i + 1) * PacmanGame.screenHeight / 7 - PacmanGame.spriteFont.MeasureString(stringToDraw).Y / 2), Color.White);
             }
 
+            //draw the back button
+            PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Back",
+                new Vector2(HighScoreMenu.BackToMenuRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Back").X / 2,
+                    HighScoreMenu.BackToMenuRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Back").Y / 2), buttonColor);
+        }
+
+        public static void DrawHelp()
+        {
+            Color buttonColor = Color.White;
+            if (UpdateStates.CurrentSelectedButton == 1) //change color of button to denote currently selected button (for keyboard controls)
+            {
+                buttonColor = Color.Red;
+            }
+
+            PacmanGame.spriteBatch.Draw(PacmanGame.boxPurple, HighScoreMenu.BackToMenuRectangle, buttonColor);
+
+            int numLines = HelpMenu.HelpText.Length; //number of lines of text to display
+            for(int i = 0; i < HelpMenu.HelpText.Length; i++) 
+            {
+                string lineToDisplay = HelpMenu.HelpText[i];
+                PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, lineToDisplay,
+                new Vector2(PacmanGame.screenWidth / 2 - PacmanGame.spriteFont.MeasureString(lineToDisplay).X / 2,
+                    (i+1) * PacmanGame.screenHeight / (numLines + 1) - PacmanGame.spriteFont.MeasureString(lineToDisplay).Y / 2), Color.Black);
+            }
+
+            //draw the back button
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, "Back",
                 new Vector2(HighScoreMenu.BackToMenuRectangle.Center.X - PacmanGame.spriteFont.MeasureString("Back").X / 2,
                     HighScoreMenu.BackToMenuRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Back").Y / 2), buttonColor);

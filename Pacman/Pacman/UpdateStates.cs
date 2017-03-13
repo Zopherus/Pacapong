@@ -48,7 +48,7 @@ namespace Pacman
             if (!PacmanGame.keyboard.IsKeyDown(Keys.Down) && previousKeysDown.Contains(Keys.Down)) //only register press when releasing
             {
                 currentSelectedButton += 1; //plus because buttons are numbered as decreasing going bottom -> up
-                currentSelectedButton %= 4; //3 buttons, so reset back to zero every 3 presses
+                currentSelectedButton %= 5; //4 buttons, so reset back to zero every 3 presses
                 previousKeysDown.Remove(Keys.Down);
             }
             if(PacmanGame.keyboard.IsKeyDown(Keys.Down) && !previousKeysDown.Contains(Keys.Down)) { previousKeysDown.Add(Keys.Down); }
@@ -78,7 +78,11 @@ namespace Pacman
                         currentSelectedButton = 0; //reset for later use
                         break;
                     case 3:
-                        Program.game.Exit();
+                        PacmanGame.gameState = GameState.Help; //help button selected
+                        currentSelectedButton = 0; //reset for later use
+                        break;
+                    case 4:
+                        Program.game.Exit(); //exit the game
                         break;
                 }
             }
@@ -89,13 +93,15 @@ namespace Pacman
             {
                 if (Menu.PlayRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                 {
-                    PacmanGame.gameState = GameState.Maze;
-                    
+                    PacmanGame.gameState = GameState.Maze; 
                 }
                 if (Menu.HighScoreRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                 {
                     PacmanGame.gameState = GameState.HighScore;
-
+                }
+                if(Menu.HelpRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
+                {
+                    PacmanGame.gameState = GameState.Help;
                 }
                 if (Menu.QuitRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                     Program.game.Exit();
@@ -120,6 +126,31 @@ namespace Pacman
             if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
             {
                 if (HighScoreMenu.BackToMenuRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
+                {
+                    PacmanGame.gameState = GameState.Menu;
+
+                }
+            }
+        }
+
+        public static void UpdateHelp()
+        {
+            //keyboard functionality to high score screen
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Down)) { currentSelectedButton = 1; } //only 1 button, so can only equal 1
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Up)) { currentSelectedButton = 1; } //only 1 button, so can only equal 1
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Enter))
+            {
+                if (currentSelectedButton == 1)
+                {
+                    PacmanGame.gameState = GameState.Menu; //back button selected
+                    currentSelectedButton = 0; //reset for later use
+                }
+            }
+            if (PacmanGame.keyboard.IsKeyDown(Keys.Escape))
+                PacmanGame.gameState = GameState.Menu;
+            if (PacmanGame.mouse.LeftButton == ButtonState.Pressed)
+            {
+                if (HelpMenu.BackToMenuRectangle.Contains(new Point(PacmanGame.mouse.X, PacmanGame.mouse.Y)))
                 {
                     PacmanGame.gameState = GameState.Menu;
 
