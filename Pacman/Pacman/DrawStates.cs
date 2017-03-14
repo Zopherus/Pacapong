@@ -72,7 +72,7 @@ namespace Pacman
                 string stringToDraw = (i + 1).ToString() + ". " + highScores[i].ToString();
                 PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, stringToDraw,
                 new Vector2(PacmanGame.screenWidth / 2 - PacmanGame.spriteFont.MeasureString(stringToDraw).X / 2,
-                    (i + 1) * PacmanGame.screenHeight / 7 - PacmanGame.spriteFont.MeasureString(stringToDraw).Y / 2), Color.White);
+                    (i + 1) * PacmanGame.screenHeight / 7 - PacmanGame.spriteFont.MeasureString(stringToDraw).Y / 2), Color.Black);
             }
 
             //draw the back button
@@ -92,12 +92,15 @@ namespace Pacman
             PacmanGame.spriteBatch.Draw(PacmanGame.boxPurple, HighScoreMenu.BackToMenuRectangle, buttonColor);
 
             int numLines = HelpMenu.HelpText.Length; //number of lines of text to display
-            for(int i = 0; i < HelpMenu.HelpText.Length; i++) 
+            for (int i = 0; i < HelpMenu.HelpText.Length; i++) 
             {
-                string lineToDisplay = HelpMenu.HelpText[i];
+                string lineToDisplay = HelpMenu.HelpText[i]; //line of help text to draw
+
+                //scrren height + offset
+                float textHeight = (PacmanGame.screenHeight / 4) + (i * PacmanGame.spriteFont.MeasureString(lineToDisplay).Y * 1.5f);
                 PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, lineToDisplay,
                 new Vector2(PacmanGame.screenWidth / 2 - PacmanGame.spriteFont.MeasureString(lineToDisplay).X / 2,
-                    (i+1) * PacmanGame.screenHeight / (numLines + 1) - PacmanGame.spriteFont.MeasureString(lineToDisplay).Y / 2), Color.Black);
+                   textHeight - PacmanGame.spriteFont.MeasureString(lineToDisplay).Y / 2), Color.Black);
             }
 
             //draw the back button
@@ -106,20 +109,30 @@ namespace Pacman
                     HighScoreMenu.BackToMenuRectangle.Center.Y - PacmanGame.spriteFont.MeasureString("Back").Y / 2), buttonColor);
         }
 
+        /// <summary>
+        /// Draws the pacman maze (including walls, dots, powerups, ghosts, etc)
+        /// </summary>
         public static void DrawMaze()
         {
+            //draw walls
             foreach (Wall wall in Map.Walls)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.WallTexture, wall.Position, Color.White);
             }
+
+            //draw dots
             foreach (Dot dot in Map.Dots)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.DotTexture, dot.Position, Color.White);
             }
+
+            //draw powerups
             foreach (Powerup powerup in Map.Powerups)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.PowerupTexture, powerup.Position, Color.White);
             }
+
+            //draw ghosts
             if (!PacmanGame.pacman.IsPowerUp)
             {
                 foreach (Ghost ghost in Map.Ghosts)
@@ -134,21 +147,27 @@ namespace Pacman
                     PacmanGame.spriteBatch.Draw(PacmanGame.GhostPowerupTexture, ghost.Position, Color.White);
                 }
             }
+
+            //draw paddles
             foreach (Paddle paddle in Map.Paddles)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.paddleBox, paddle.Position, Color.White);
             }
+            
+            //draw invaders
             foreach (Invader invader in Map.Invaders)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.InvaderTexture, invader.Position, Color.White);
             }
+
+            //draw shots
             foreach (Shot shot in Map.Shots)
             {
                 PacmanGame.spriteBatch.Draw(PacmanGame.DotTexture, shot.position, Color.White);
             }
             PacmanGame.spriteBatch.Draw(PacmanGame.PacmanTextures[(int)PacmanGame.pacman.movementDirection - 1, Convert.ToInt32(PacmanGame.pacman.IsMouthOpen)], PacmanGame.pacman.Position, Color.White);
 
-           
+           //draw stings (level, etc.)
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[0].Score.ToString(), new Vector2(0, 0), Color.Black);
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, Map.Paddles[1].Score.ToString(), new Vector2(PacmanGame.screenWidth - PacmanGame.spriteFont.MeasureString(Map.Paddles[1].Score.ToString()).X, 0), Color.Black);
             string message = "Level: " + (PacmanGame.mapNumber + 1).ToString();
@@ -161,6 +180,9 @@ namespace Pacman
             }
         }
         
+        /// <summary>
+        /// Draw the end level state)
+        /// </summary>
         public static void DrawLevelEnd()
         {
             // Draw exact same thing as in maze, but with the winner
@@ -181,6 +203,9 @@ namespace Pacman
             PacmanGame.spriteBatch.DrawString(PacmanGame.spriteFont, display, new Vector2((PacmanGame.screenWidth - stringWidth) / 2, PacmanGame.screenHeight - stringHeight), Color.Black);
         }
 
+        /// <summary>
+        /// Draw th end game state)
+        /// </summary>
         public static void DrawGameEnd()
         {
             string display = "";
